@@ -1,10 +1,14 @@
-import {Header} from "../../components"
+
+import {Header, Carousel} from "../../components"
 
 function Home (){
 
 return(
-    
+    <>
     <Header></Header>
+    <Carousel></Carousel>
+    </>
+    
 
 )
 

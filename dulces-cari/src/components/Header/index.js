@@ -1,9 +1,6 @@
 import logo from "../../asset/img/logo.jpg"
-import por1 from "../../asset/img/por1.png"
-import por2 from "../../asset/img/por2.png"
-import por3 from "../../asset/img/por3.png"
-import por4 from "../../asset/img/por4.png"
-import Carousel from 'react-bootstrap/Carousel';
+
+
 
 
 function Header() {
@@ -33,34 +30,6 @@ function Header() {
                     </div>
                 </div>
             </nav>
-
-            <Carousel>
-                <Carousel.Item interval={1000}>
-                    <img
-                        className="d-block w-150"
-                        src={por1}
-                        alt="First slide"
-                    />
-
-                </Carousel.Item>
-                <Carousel.Item interval={500}>
-                    <img
-                        
-                        className="d-block w-150"
-                        src={por2}
-                        alt="Second slide"
-                    />
-
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-150"
-                        src={por3}
-                        alt="Third slide"
-                    />
-
-                </Carousel.Item>
-            </Carousel>
 
         </>
     );
