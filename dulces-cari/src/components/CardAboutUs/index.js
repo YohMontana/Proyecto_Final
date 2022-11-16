@@ -33,7 +33,7 @@ function CardAboutUs() {
           <div className="card h-100 ">
               <img className="card-img-top" src={hornoicon}  alt="..."/>
               <div className="card-body text-center">
-               <h5 className="card-title ">Hornedos con amor</h5>
+               <h5 className="card-title ">Horneados con amor</h5>
                <p className="card-text">Nos apasiona la cocción. Cada uno de nuestros artículos hechos a mano son cuidadosamente horneados con amor.</p>
               </div>
           </div>
@@ -41,7 +41,7 @@ function CardAboutUs() {
 
           <div className="col">
           <div className="card h-100">
-              <img className="card-img-top" src={timeicon}  alt="..."/>
+              <img className="card-img-top" src={timeicon}  alt="..."/>c
               <div className="card-body text-center">
                <h5 className="card-title ">Cumplimos con los tiempos</h5>
                <p className="card-text">Somos muy puntuales y prometemos entregar productos frescos a tiempo a cada cliente.</p>
