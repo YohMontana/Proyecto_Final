@@ -33,7 +33,7 @@ function CardAboutUs() {
           <div className="card h-100 ">
               <img className="card-img-top" src={hornoicon}  alt="..."/>
               <div className="card-body text-center">
-               <h5 className="card-title ">Hornedos con amor</h5>
+               <h5 className="card-title ">Horneados con amor</h5>
                <p className="card-text">Nos apasiona la cocción. Cada uno de nuestros artículos hechos a mano son cuidadosamente horneados con amor.</p>
               </div>
           </div>
