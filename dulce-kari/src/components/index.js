@@ -1,2 +1,5 @@
 export { default as Carousel} from "./Carousel"
 export { default as CardAboutUs} from "./CardAboutUs"
+export { default as CardSlider} from "./CardSlider"
+export { default as ProductCard} from "./ProductCard"
+export { default as Separator} from "./Separator"
