@@ -27,6 +27,7 @@ const MainLayout = ()=>{
                             <li className="nav-item"><a className="nav-link" href="/about">Nosotros</a></li>
                             <li className="nav-item"><a className="nav-link" href="#">Tienda</a></li>
                             <li className="nav-item"><a className="nav-link" href="#">Contactanos</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#">Productos</a></li>
                         </ul>
                     </div>
                 </div>
