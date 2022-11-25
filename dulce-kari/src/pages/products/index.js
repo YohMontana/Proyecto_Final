@@ -5,21 +5,21 @@ import regalo1 from "../../asset/gif/regalo1.jpg";
 
 function Products() {
   const [product, setProduct] = useState({
-    productoNombre: "",
-    productoPrecio: "",
-    productoDescripcion: "",
-    productoImagen: "",
-    productoCategoria: "",
-    productoStock: "",
+    name: "",
+    precio: "",
+    descripcion: "",
+    imagen: "",
+    categoria: "",
+    stock: "",
   });
 
   
   const handleInputChange = (event) => {
-    // const { name, value } = event.currentTarget;
-    console.log(event.target.value)
+    const { name, value } = event.target;
+    
     setProduct({
       ...product,
-      [event.target.name] : event.target.value
+      [name] : value,
     })
   }
     
@@ -29,12 +29,12 @@ function Products() {
       const response = await PostProduct(product);
       if (response){
           setProduct({
-            productoNombre: "",
-            productoPrecio: "",
-            productoDescripcion: "",
-            productoImagen: "",
-            productoCategoria: "",
-            productoStock: "",
+            name: "",
+            precio: "",
+            descripcion: "",
+            imagen: "",
+            categoria: "",
+            stock: "",
             });
         }
     } catch (error) {
@@ -56,10 +56,10 @@ function Products() {
                 <input
                   type="text"
                   className="form-control"
-                  id="productoNombre"
+                  id="name"
                   placeholder="Nombre del Producto"
-                  name="productoNombre"
-                  value={product.productoNombre}
+                  name="name"
+                  value={product.name}
                   onChange={handleInputChange}
                   autofocus
                 />
@@ -71,9 +71,9 @@ function Products() {
                 <input
                   type="number"
                   className="form-control"
-                  id="productoPrecio"
-                  name="productoPrecio"
-                  value={product.productoPrecio}
+                  id="precio"
+                  name="precio"
+                  value={product.precio}
                   onChange={handleInputChange}
                 />
               </div>
@@ -83,11 +83,11 @@ function Products() {
                 </label>
                 <textarea
                   className="form-control"
-                  id="productoDescripcion"
+                  id="descripcion"
                   placeholder="Descripción del producto"
                   rows="3"
-                  name="productoDescripcion"
-                  value={product.productoDescripcion}
+                  name="descripcion"
+                  value={product.descripcion}
                   onChange={handleInputChange}
                 ></textarea>
               </div>
@@ -98,11 +98,11 @@ function Products() {
                 <input
                   type="text"
                   className="form-control"
-                  id="productoImagen"
+                  id="imagen"
                   placeholder="Url de la imagen"
                   autofocus
-                  name="productoImagen"
-                  value={product.productoImagen}
+                  name="imagen"
+                  value={product.imagen}
                   onChange={handleInputChange}
                 />
               </div>
@@ -113,11 +113,11 @@ function Products() {
                 <input
                   type="text"
                   className="form-control"
-                  id="productoCategoria"
-                  name="productoCategoria"
+                  id="categoria"
+                  name="categoria"
                   placeholder="Categoria del Producto"
                   autofocus
-                  value={product.productoCategoria}
+                  value={product.categoria}
                   onChange={handleInputChange}
                 />
               </div>
@@ -128,9 +128,9 @@ function Products() {
                 <input
                   type="number"
                   className="form-control"
-                  id="productoStock"
-                  name="productoStock"
-                  value={product.productoStock}
+                  id="stock"
+                  name="stock"
+                  value={product.stock}
                   onChange={handleInputChange}
                 />
               </div>
