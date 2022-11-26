@@ -1,0 +1,21 @@
+*{
+    
+}
+.buttons{
+    flex-direction: column;
+    width: 250px;
+    
+}
+.img{
+    background-color: lightcoral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 50 vw;
+}
+.container-principal {
+    display: flex;
+    height: 100vh;
+
+}
