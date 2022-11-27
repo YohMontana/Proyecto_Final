@@ -1,0 +1,17 @@
+.btn{
+    background-color: #C99DB4;
+    border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.price{
+    font-family: 'Roboto', sans-serif;
+    float: left;
+   
+}
+.desde{
+    font-size: 12px;
+    margin: 5px 10px 5px 15px;
+    color: #737373;
+   
+}
