@@ -14,8 +14,8 @@ function Products() {
   });
 
   
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
     
     setProduct({
       ...product,
@@ -23,10 +23,10 @@ function Products() {
     })
   }
     
-  const createProduct = async (event) => {
-    event.preventDefault();
+  const createProduct = async (e) => {
+    e.preventDefault();
     try {
-      const response = await PostProduct(product);
+      const response = await PostProduct("products", product);
       if (response){
           setProduct({
             name: "",
@@ -55,8 +55,7 @@ function Products() {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
-                  id="name"
+                  className="form-control"                  
                   placeholder="Nombre del Producto"
                   name="name"
                   value={product.name}
@@ -70,8 +69,7 @@ function Products() {
                 </label>
                 <input
                   type="number"
-                  className="form-control"
-                  id="precio"
+                  className="form-control"                  
                   name="precio"
                   value={product.precio}
                   onChange={handleInputChange}
@@ -83,7 +81,6 @@ function Products() {
                 </label>
                 <textarea
                   className="form-control"
-                  id="descripcion"
                   placeholder="Descripción del producto"
                   rows="3"
                   name="descripcion"
@@ -97,8 +94,7 @@ function Products() {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
-                  id="imagen"
+                  className="form-control"                  
                   placeholder="Url de la imagen"
                   autofocus
                   name="imagen"
@@ -112,8 +108,7 @@ function Products() {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
-                  id="categoria"
+                  className="form-control"                  
                   name="categoria"
                   placeholder="Categoria del Producto"
                   autofocus
@@ -127,8 +122,7 @@ function Products() {
                 </label>
                 <input
                   type="number"
-                  className="form-control"
-                  id="stock"
+                  className="form-control"                  
                   name="stock"
                   value={product.stock}
                   onChange={handleInputChange}

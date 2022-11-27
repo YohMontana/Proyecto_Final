@@ -1,4 +1,3 @@
-
 import {Carousel} from "../../components"
 import {CardSlider} from '../../components';
 import {Separator} from '../../components';
@@ -11,13 +10,8 @@ return(
     <Carousel></Carousel>
     <Separator></Separator>
     <CardSlider></CardSlider>
-    
-  
     </>
-    
-
-)
-
+) 
 }
 
 export default Home;
