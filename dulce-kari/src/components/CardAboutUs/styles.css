@@ -17,14 +17,18 @@
      
  }
  .img-container{
-     max-width: 360px;
+     max-width: 300px;
      min-width: 200px;
-     width: 50%;
+     display: flex;
+     justify-content: center;
+     align-content: center;
+    margin: -50px;
  
+   
  }
  
  .foto{
-     width: 100%; 
+   
  }
  
  .text-container{
@@ -33,6 +37,8 @@
      flex-wrap: wrap;
      justify-content: center;
      align-content: center;
+     margin: 20px;
+   
  }
  
  h4{
@@ -71,4 +77,3 @@
      font-family: 'Roboto', sans-serif;
   
  }
- 

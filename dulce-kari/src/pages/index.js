@@ -5,5 +5,5 @@ export { default as ProductView} from "./products";
 export { default as Product} from "./Product";
 export { default as PreguntasFrecuentes} from './Preguntas'
 export { default as TerminosCondiciones} from './Terminos'
-export { default as LibroDeReclamaciones} from './Reclamaciones'
+export { default as LibroReclamaciones} from './Reclamaciones'
 export { default as LoginView} from './Login'

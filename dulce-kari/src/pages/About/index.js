@@ -1,5 +1,6 @@
 
-import {CardAboutUs, CardFooter} from "../../components"
+import {CardAboutUs} from "../../components"
+import {CardFooter} from '../../components';
 
 function About (){
 

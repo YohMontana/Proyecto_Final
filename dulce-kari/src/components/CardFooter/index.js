@@ -1,41 +1,56 @@
 import React from "react";
 import Logo from '../../asset/img/logo.jpg'
-import ImgFacebook from '../../asset/img/facebook.png'
-import ImgInstagram from '../../asset/img/instagram.png'
 
-
-
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import "./style.css"
+import IconButton from '@mui/material/IconButton';
 function CardFooter() {
     return(
-        <div>
-            <div className='container'>
+        <div className='container'>
+            <div >
                 <div className='row py-5 text-dark text-center'>
                     <div className='col-md-3 col-sm-12 text-center'>
                         <a href="/"><img src={Logo} className='img-fluid rounded-circle mt-5 mb-5' width='150px'/></a>
                     </div>
                     <div className='col-md-3 col-sm-12'>
-                        <h4 className='fw-bold pb-2 px-2'>Links de Interés</h4>
-                        <div className='row m-3'>
+                        <h2 className='fw-bold text-center'>Links de Interés</h2>
+                        <div className='row m-3 text-center'>
                             <a href="/terminos-y-condiciones" className='text-decoration-none p-2'>
-                            Términos y Condiciones
+                            <h5 className="text-center" id="link">Términos y Condiciones</h5>
                             </a>
-                            <a href="preguntas-frecuentes" className='text-decoration-none p-2'>Preguntas Frecuentes</a>
-                            <a href="libro-de-reclamaciones" className='text-decoration-none p-2'>Libro de Reclamaciones</a>
+                            <a href="preguntas-frecuentes" className='text-decoration-none p-2'><h5 className="text-center" id="link">Preguntas Frecuentes</h5></a>
+                            <a href="libro-de-reclamaciones" className='text-decoration-none p-2'><h5 className="text-center" id="link">Libro de Reclamaciones</h5></a>
                         </div>
                     </div>
                     <div className='col-md-3 col-sm-12 text-center'>
-                        <h4 className='fw-bold d-flex justify-content-start'>Contáctate con Nosotros</h4>
+                        <h2 className='fw-bold text-center'>Contáctate con Nosotros
+                        </h2>
                         <div className="text-center">
-                            <p className="mb-0"><h5 className="fw-bold d-flex justify-content-start">WhatsApp:</h5> (+51) 971412245</p>
-                            <p className="mb-0"><h5 className="fw-bold d-flex justify-content-start">Correo Electrónico:</h5> pedidos@dulceskari.pe</p>
-                            <p className="mb-0"><h5 className="fw-bold d-flex justify-content-start">Horario de atención:</h5> De Lunes a Domingo de 11am a 7pm</p>
+                            <div>
+                            <h5 className="fw-bold text-center">WhatsApp</h5>
+                            <a className="text-center" href="https://api.whatsapp.com/send?phone=+51971412245&text=Hola,%20quiero%20informaci%C3%B3n%20sobre..."  target="_blank"><h6 id="link" >(+51) 971412245</h6></a>
+                            </div>
+                            <div>
+                            <h5 className="fw-bold text-center">Correo Electrónico</h5> 
+                            <h6 className="text-center">pedidos@dulceskari.pe</h6>
+                            </div>
+                            <div>
+                            <h5 className="fw-bold text-center">Horario de atención</h5> 
+                            <h6 className="text-center">Lunes a Domingo de 11am a 7pm</h6>
+                            </div>
                         </div>
                     </div>
                     <div className='col-md-3 col-sm-12 text-center'>
-                        <h4 className='fw-bold pb-3 d-flex justify-content-start'>Síguenos</h4>
+                        <h2 className='fw-bold pb-3 d-flex justify-content-start'>Síguenos</h2>
                         <div className='col-md-3 col-sm-12 d-flex justify-content-center align-content-center'>
-                        <a href="facebook"><img src={ImgFacebook} className='img-fluid pb-3'/></a>
-                        <a href="instagram"><img src={ImgInstagram} className='img-fluid mx-3'/></a>
+                     <a href="https://www.facebook.com/DulcesKari1" target="_blank" ><IconButton color="secondary" >
+                        <FacebookIcon />
+                        </IconButton></a>
+                        <a href="https://www.instagram.com/dulces.kari/" target="_blank" ><IconButton color="secondary" >
+                
+                        <InstagramIcon />
+                        </IconButton></a>
                         </div>
                         
                         

@@ -14,8 +14,7 @@ return(
     <Separator></Separator>
     <CardSlider></CardSlider>
     <Division></Division>
-    <CardFooter></CardFooter>
-    
+    <CardFooter></CardFooter> 
   
     </>
     

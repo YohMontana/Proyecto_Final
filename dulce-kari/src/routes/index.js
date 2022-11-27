@@ -2,7 +2,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Pas2: Importar nuestras vistas
-import { HomeView,AboutView,StoreView,ProductView, PreguntasFrecuentes, TerminosCondiciones, LibroDeReclamaciones, LoginView } from "../pages";
+import { HomeView,
+  AboutView,
+  StoreView,
+  ProductView,
+   Product,
+    PreguntasFrecuentes, 
+    TerminosCondiciones, 
+    LibroReclamaciones, 
+    LoginView} from "../pages";
 import { MainLayout } from "../layouts";
 import { Bocaditos } from "../components/Store/Bocaditos";
 import { CupCake } from "../components/Store/Cupcake";
@@ -22,16 +30,18 @@ const Router = () => {
             <Route path="bocaditos" element={<Bocaditos/>}/>
             <Route path="cupcake" element={<CupCake/>}/>
             <Route path="tortas" element={<Tortas/>}/>
+            
 
           </Route>
           <Route path="/postproduct" element={<ProductView/>} />
-        </Route>
-        <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes/>} />
+          <Route path="/product" element={<Product/>}/>
+          <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes/>} />
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones/>} />
-          <Route path="/libro-de-reclamaciones" element={<LibroDeReclamaciones/>} />
-          <Route path="/login" element={<LoginView/>} />
+          <Route path="/libro-de-reclamaciones" element={<LibroReclamaciones/>} />
+          <Route path="/login" element={<LoginView/>} /> 
         
-        
+        </Route>
+      
       </Routes>
     </BrowserRouter>
   );

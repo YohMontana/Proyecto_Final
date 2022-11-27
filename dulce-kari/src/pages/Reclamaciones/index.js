@@ -12,4 +12,4 @@ function LibroReclamaciones() {
     );
 }
 
-export default LibroDeReclamaciones;
+export default LibroReclamaciones;
