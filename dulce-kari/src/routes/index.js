@@ -1,8 +1,15 @@
+// Paso1: Importar los componentes de React Router DOM
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomeView, AboutView, ProductView, Product  } from "../pages";
+
+// Pas2: Importar nuestras vistas
+import { HomeView,AboutView,StoreView,ProductView } from "../pages";
 import { MainLayout } from "../layouts";
+import { Bocaditos } from "../components/Store/Bocaditos";
+import { CupCake } from "../components/Store/Cupcake";
+import { Tortas } from "../components/Store/Tortas";
 
 
+// path => Nombre de la ruta /, /login, /registro
 
 const Router = () => {
   return (
@@ -11,13 +18,18 @@ const Router = () => {
         <Route element={<MainLayout/>}>
           <Route path="/" element={<HomeView />} />
           <Route path="/about" element={<AboutView/>} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/tienda" element={<StoreView/>}>
+            <Route path="bocaditos" element={<Bocaditos/>}/>
+            <Route path="cupcake" element={<CupCake/>}/>
+            <Route path="tortas" element={<Tortas/>}/>
+
+          </Route>
           <Route path="/postproduct" element={<ProductView/>} />
         </Route>
+        
         
       </Routes>
     </BrowserRouter>
   );
 };
-
 export default Router;

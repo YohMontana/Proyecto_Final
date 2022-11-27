@@ -15,42 +15,59 @@ import r7 from "../../asset/gif/r7.jpg";
 
 const CardSlider = () => {
     return (
-        <div className='container py-4 px-4 justify-content-center mt-5 mb-5'>
-           <Swiper
-           freeMode={true}
-           grabCursor={true}
-           modules={[FreeMode]}
-           className="mySwiper"
-           slidesPerView={3.5}
-   
-           >
-            <SwiperSlide>
-              <ProductCard data={{imgSrc: r1, price: '10 soles', title:'el mejor regalo'}}/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProductCard data={{imgSrc: r3, price: '20 soles', title:'el mejor regalo'}}/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProductCard data={{imgSrc: r3, price: '30 soles', title:'el mejor regalo'}}/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProductCard data={{imgSrc: r4, price: '40 soles', title:'el mejor regalo'}}/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProductCard data={{imgSrc: r5, price: '50 soles', title:'el mejor regalo'}}/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProductCard data={{imgSrc: r6, price: '50 soles', title:'el mejor regalo'}}/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProductCard data={{imgSrc: r7, price: '60 soles', title:'el mejor regalo'}}/>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ProductCard data={{imgSrc: r1, price: '70 soles', title:'el mejor regalo'}}/>
-            </SwiperSlide>
+      <div className='container'>
+      <div className='justify-content-center mt-5 mb-5'>
+        <h1 className='text-center display-5' >
+            !Las màs pedidas¡
+        </h1>
+      </div>
+      <div className='container py-4 px-4 justify-content-center mt-5 mb-5'>
+        <Swiper
+          freeMode={true}
+          grabCursor={true}
+          modules={[FreeMode]}
+          className="mySwiper"
+          slidesPerView={3.5}
+        >
+          <SwiperSlide>
+            <ProductCard data={{ imgSrc: r1, price: '10 soles', title: 'el mejor regalo' }} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductCard data={{ imgSrc: r3, price: '20 soles', title: 'el mejor regalo' }} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductCard data={{ imgSrc: r3, price: '30 soles', title: 'el mejor regalo' }} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductCard data={{ imgSrc: r4, price: '40 soles', title: 'el mejor regalo' }} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductCard data={{ imgSrc: r5, price: '50 soles', title: 'el mejor regalo' }} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductCard data={{ imgSrc: r6, price: '50 soles', title: 'el mejor regalo' }} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductCard data={{ imgSrc: r7, price: '60 soles', title: 'el mejor regalo' }} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductCard data={{ imgSrc: r1, price: '70 soles', title: 'el mejor regalo' }} />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+
+      <div className='container-fluid h-100'>
+        <div className='row w-100 align-items-center'>
+          <div className='col text-center'>
+            <a href="/tienda">
+            <button className='btn btn-success mb-5 py-2'>Ver Mas Productos</button>
+            </a>
             
-           </Swiper>
+          </div>
         </div>
+
+      </div>
+    </div>
     );
 }
 

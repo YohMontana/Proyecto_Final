@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .navbar {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #c4ccde;
+  }
+  
+  h1 {
+    color: rgb(189, 151, 151);
+  }
+  
+  .sidebar {
+    width: 20rem;
+    height: calc(100vh - 52px);
+    border-right: 1px solid #c4ccde;
+  }
+  .sidebar ul {
+    list-style: none;
+    padding: 1rem 2rem;
+  }
+  .sidebar ul li {
+    margin-top: 20px;
+    margin-bottom: 1rem;
+  }
+  .sidebar ul li a {
+    text-decoration: none;
+  }
+  
+  .content {
+    
+    margin-bottom: 15px;
+    margin-left: 30px;
+  }
+  
+  .search {
+    margin-top: 50px;
+  }
