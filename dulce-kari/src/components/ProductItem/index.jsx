@@ -2,9 +2,9 @@ import * as React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate} from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { purple } from '@mui/material/colors';
-import { styled } from '@mui/material/styles';
 
+import { styled } from '@mui/material/styles';
+import torta from "../../asset/img/torta.jpg"
 import {
   Box,
   Button,
@@ -69,11 +69,12 @@ const ProductItem = () => {
   }));
   return (
     <div className='container-principal' >
-      <div className='container  m-5 img'>IMAGEN</div>
+      <div className='container  m-5 img'><img className='img-1'src={torta}  alt="..."/></div>
  <div className='container m-5 '>
   <h1>Torta de Cumpleaños</h1>
-  <h4>s/.30</h4>
+  
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eos saepe alias magni nihil quia repellat quam veritatis! Consequuntur libero ex molestias similique facilis voluptates doloremque, perspiciatis sequi mollitia et?</p>
+  <h2>s/.30</h2>
     <Box
     className='m-3 '
       component="form"

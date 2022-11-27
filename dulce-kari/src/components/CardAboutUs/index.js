@@ -8,7 +8,7 @@ function CardAboutUs() {
  
   return (
     <div className="container-fluid" >
-      <div className="first row container-fluid" >
+      <div className="first row container-fluid contain" >
         <div className="img-container col-sm-12  col-md-4 col-lg-6 "> <img className="foto" src={fotoKari} alt="" /> </div>
         <div className="text-container  col-sm-12  col-md-8  col-lg-6 ">
         <p className="text-center mt-5">Dulces Kari es un lugar donde la imaginación, los sabores y la inspiración se fusionan para crear las tortas más espectaculares.

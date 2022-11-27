@@ -1,0 +1,25 @@
+*{
+    
+}
+.buttons{
+    flex-direction: column;
+    width: 250px;
+    
+}
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 50 vw;
+    box-sizing: border-box;
+}
+.img-1{
+    box-sizing: border-box;
+    width: 500px;
+}
+.container-principal {
+    display: flex;
+    height: 100vh;
+
+}

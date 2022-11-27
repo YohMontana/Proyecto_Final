@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Pas2: Importar nuestras vistas
-import { HomeView,AboutView,StoreView,ProductView } from "../pages";
+import { HomeView,AboutView,StoreView,ProductView , Product} from "../pages";
 import { MainLayout } from "../layouts";
 import { Bocaditos } from "../components/Store/Bocaditos";
 import { CupCake } from "../components/Store/Cupcake";
@@ -22,9 +22,11 @@ const Router = () => {
             <Route path="bocaditos" element={<Bocaditos/>}/>
             <Route path="cupcake" element={<CupCake/>}/>
             <Route path="tortas" element={<Tortas/>}/>
+            
 
           </Route>
           <Route path="/postproduct" element={<ProductView/>} />
+          <Route path="/product" element={<Product/>}/>
         </Route>
         
         

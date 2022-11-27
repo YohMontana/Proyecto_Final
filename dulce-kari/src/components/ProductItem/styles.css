@@ -7,15 +7,25 @@
     
 }
 .img{
-    background-color: lightcoral;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 70vh;
     width: 50 vw;
+    box-sizing: border-box;
 }
 .container-principal {
     display: flex;
     height: 100vh;
 
+}
+.img-1{
+    box-sizing: border-box;
+    width: 500px;
+}
+p{
+    color: #545454;
+}
+h2{
+    color: #545454;
 }
