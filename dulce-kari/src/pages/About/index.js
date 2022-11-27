@@ -1,11 +1,12 @@
 
-import {CardAboutUs} from "../../components"
+import {CardAboutUs, CardFooter} from "../../components"
 
 function About (){
 
     return(
         <>
         <CardAboutUs></CardAboutUs>
+        <CardFooter></CardFooter>
         </>
     )
 }

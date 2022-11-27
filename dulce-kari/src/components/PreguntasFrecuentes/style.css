@@ -1,0 +1,46 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    color: #545454
+    
+}
+
+.container{
+    background-color: #f8e8f3;
+    font-size: 15px;
+}
+
+h1{
+    padding-top: 3%;
+    
+}
+
+h4{
+    font-size: 20px;
+    padding-left: 10%;
+}
+
+.texto{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+ul{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+
+}
+
+.delivery{
+    padding-top: 2px;
+}
+
+a{
+    color: #545454
+}

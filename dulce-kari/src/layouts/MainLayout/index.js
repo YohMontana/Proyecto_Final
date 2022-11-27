@@ -28,6 +28,7 @@ const MainLayout = ()=>{
                             <li className="nav-item"><a className="nav-link" href="#">Tienda</a></li>
                             <li className="nav-item"><a className="nav-link" href="#">Contactanos</a></li>
                             <li className="nav-item"><a className="nav-link" href="#">Productos</a></li>
+                            <li className="nav-item"><a className="nav-link" href="/login">Iniciar sesión/Registrarse</a></li>
                         </ul>
                     </div>
                 </div>
