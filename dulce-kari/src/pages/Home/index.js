@@ -16,6 +16,8 @@ return(
     <Carousel></Carousel>
     <Separator></Separator>
     <CardSlider></CardSlider>
+    <Division></Division>
+    <CardFooter></CardFooter> 
     <FloatingWhatsApp phoneNumber="992980249" accountName= "Foo" allowEsc allowClickAway> </FloatingWhatsApp>
     </>
 ) 
