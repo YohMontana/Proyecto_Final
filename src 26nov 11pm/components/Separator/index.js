@@ -1,6 +1,5 @@
 import React from 'react';
 import './style.css';
-// import postre from "../../asset/img/postre.png"
 
 const Separator = () => {
     return (

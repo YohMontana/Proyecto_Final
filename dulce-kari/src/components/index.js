@@ -7,3 +7,7 @@ export { default as Separator} from "./Separator"
 export { default as CreateProduct} from "./CreateProduct"
 export { default as ProductItem } from "./ProductItem";
 export { default as Store} from "./Store"
+export { default as CardFooter} from "./CardFooter"
+export { default as PreguntasFrecuentes} from './PreguntasFrecuentes'
+export { default as TerminosCondiciones} from './TerminosCondiciones'
+export { default as LibroDeReclamaciones} from './LibroDeReclamaciones'

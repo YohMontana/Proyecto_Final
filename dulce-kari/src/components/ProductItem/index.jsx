@@ -68,7 +68,7 @@ const ProductItem = () => {
     },
   }));
   return (
-    <div className='container-principal' >
+    <div className='container container-principal' >
       <div className='container  m-5 img'><img className='img-1'src={torta}  alt="..."/></div>
  <div className='container m-5 '>
   <h1>Torta de Cumpleaños</h1>

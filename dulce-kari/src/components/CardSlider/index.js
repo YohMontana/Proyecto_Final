@@ -22,6 +22,8 @@ const CardSlider = () => {
     backgroundColor: '#545454',
     border: 'none',
     margin: '10px 10px',
+    padding: '12px',
+    borderRadius: '10PX',
     textDecoration: 'none',
     '&:hover': {
       backgroundColor: '#5C636A',
