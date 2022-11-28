@@ -7,7 +7,7 @@ import { HomeView,
   StoreView,
   ProductView,
    Product,
-    PreguntasFrecuentes, 
+   Preguntas, 
     TerminosCondiciones, 
     LibroReclamaciones, 
     LoginView} from "../pages";
@@ -30,12 +30,10 @@ const Router = () => {
             <Route path="bocaditos" element={<Bocaditos/>}/>
             <Route path="cupcake" element={<CupCake/>}/>
             <Route path="tortas" element={<Tortas/>}/>
-            
-
           </Route>
           <Route path="/postproduct" element={<ProductView/>} />
           <Route path="/product" element={<Product/>}/>
-          <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes/>} />
+          <Route path="/preguntas-frecuentes" element={<Preguntas/>} />
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones/>} />
           <Route path="/libro-de-reclamaciones" element={<LibroReclamaciones/>} />
           <Route path="/login" element={<LoginView/>} /> 

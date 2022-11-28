@@ -1,17 +1,14 @@
-import {PreguntasFrecuentes} from '../../components'
-import {CardFooter} from '../../components'
 
-function PreguntaFrecuente() {
+import {CardFooter, PreguntasFrecuentes} from '../../components'
+
+function Preguntas() {
 
     return(
         <>
-        <PreguntasFrecuentes></PreguntasFrecuentes>
-        <CardFooter></CardFooter>
-        
-    
-        
+       <PreguntasFrecuentes></PreguntasFrecuentes>
+        <CardFooter></CardFooter>       
         </>
     );
 }
 
-export default PreguntasFrecuentes;
+export default Preguntas;

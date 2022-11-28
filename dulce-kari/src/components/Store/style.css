@@ -7,15 +7,20 @@
     display: flex;
   }
   
-  .navbar {
+  .navdar {
     background-color: #ffffff;
-    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-bottom: 1px solid #c4ccde;
+    height: 100px;
   }
-  
-  h1 {
+
+  h1, h2 {
     color: rgb(189, 151, 151);
   }
+
+
   
   .sidebar {
     width: 20rem;
