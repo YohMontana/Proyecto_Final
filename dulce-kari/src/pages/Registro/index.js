@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
 
 
-
-
-const Login = () => {
+const Registro = () => {
     const [user, setUser] = useState({
         email: "",
         password: "",
@@ -41,7 +39,7 @@ const Login = () => {
 
     const validateIsLogged = () => {
         const user = JSON.parse(localStorage.getItem("user"));
-        if(user) history("/tienda")
+        if(user) history("#")
         
 
     }
@@ -55,11 +53,8 @@ const Login = () => {
         <div className="container">
             <div className='text-center pt-5'>
                 <span>
-                <a className="text-decoration-none" href='/'>Inicio</a> / Iniciar Sesión
+                <a className="text-decoration-none" href='/'>Inicio</a> / Registrarse
                 </span>
-            </div>
-            <div className="text-center pt-2">
-                <h1>Mi cuenta</h1>
             </div>
             <div className="d-flex justify-content-center alignt-items-center"
                  style={{
@@ -70,7 +65,15 @@ const Login = () => {
                     width: 400,
                 }}>
                     <div className="my-3 text-center">
-                        <h1>Iniciar Sesión</h1>
+                        <h1>Registrarse</h1>
+                        <input
+                        type="text"
+                        className="form-control mt-4"
+                        placeholder="Nombre y Apellido"
+                        name="name"
+                        value={user.name}
+                        onChange={handleInputChange}
+                        />
                         <input
                         type="text"
                         className="form-control mt-4"
@@ -92,11 +95,10 @@ const Login = () => {
                         <div className="d-grid">
                             <button className="btn btn-outline-primary mt-4"
                             onClick={handleLogin}
-                            >Ingresar</button>
-                           
+                            >Registrarse</button>
                         </div>
                         <div>
-                        <a href="registro" className='text-decoration-none p-2 fs-6' id="link">¿No tienes una cuenta? Registrarse</a>
+                        <a href="login" className='text-decoration-none p-2 fs-6' id="link">¿Ya tienes una cuenta? Acceder</a>
                         </div>
                     </div>
                     
@@ -107,4 +109,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Registro;

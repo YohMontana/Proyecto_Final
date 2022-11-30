@@ -10,7 +10,8 @@ import { HomeView,
     PreguntasFrecuentes, 
     TerminosCondiciones, 
     LibroReclamaciones, 
-    LoginView} from "../pages";
+    LoginView,
+    RegistroView} from "../pages";
 import { MainLayout } from "../layouts";
 import { Bocaditos } from "../components/Store/Bocaditos";
 import { CupCake } from "../components/Store/Cupcake";
@@ -39,6 +40,7 @@ const Router = () => {
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones/>} />
           <Route path="/libro-de-reclamaciones" element={<LibroReclamaciones/>} />
           <Route path="/login" element={<LoginView/>} /> 
+          <Route path="/registro" element={<RegistroView/>} />
         
         </Route>
       
