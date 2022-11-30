@@ -1,13 +1,19 @@
 import { Store } from "../../components";
 import {CardFooter} from '../../components';
+import "./style.css"
 import React from 'react';
+import {Division} from '../../components';
 
 
 const Stores = () => {
     return (
         <>
         <Store></Store>
-        <CardFooter></CardFooter>
+        <Division></Division>
+        <div className="containere">
+            <CardFooter></CardFooter>
+        </div>
+    
         </>
         
     );

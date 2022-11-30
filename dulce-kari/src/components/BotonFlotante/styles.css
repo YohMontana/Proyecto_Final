@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  #btn-mas{
+    display: none;
+  }
+  .float{
+    position: fixed;
+    bottom: 60px;
+    right: 40px;
+    z-index: 500;
+  }
+  .redes a, .btn-mas label{
+    display: block;
+    text-decoration: none;
+    background: #C99DB4;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    transition: all 500ms ease;  
+  }
+  
+  .redes {
+    margin-left: 240px;
+  }
+  
+  .btn-mas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  .help { 
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    visibility: none;
+    background-color: #F8E8F3;  
+    margin-right: 25px;
+    width: 220px;  
+    border-radius: 50px;
+  
+  }
+  
+  .help p{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    font-size: 20px;
+    font-style: italic;
+    
+  }
+  
+  .redes a:hover{
+    background: #fff;
+    color: #ED719F;
+  
+  }
+  
+  .redes a, .help p{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: none;
+  }
+  
+   #btn-mas:checked~ .redes a, .help p{ 
+     margin-bottom: 10px; 
+    opacity: 1; 
+    visibility: visible; 
+  }
+  
+  .btn-mas label{
+    cursor: pointer;
+    background: #F8E8F3;
+    font-size: 23px;
+  }
+  
+  #btn-mas:checked ~ .btn-mas label{
+    font-size: 25px;
+    background: #C99DB4;  
+  }
+  

@@ -1,7 +1,6 @@
 
 import {ProductItem} from "../../components"
 import {CardFooter} from '../../components';
-
 import {Division} from '../../components';
 
 function Product (){

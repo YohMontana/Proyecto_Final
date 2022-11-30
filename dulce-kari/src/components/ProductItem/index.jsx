@@ -2,12 +2,10 @@ import * as React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate} from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-
-import { styled } from '@mui/material/styles';
+import MyButton from "../MyButton"  
 import torta from "../../asset/img/torta.jpg"
 import {
   Box,
-  Button,
   TextField,
 } from "@mui/material";
 import "./styles.css"
@@ -56,17 +54,7 @@ const ProductItem = () => {
     const BuyNow = () =>{
       history ("/finalizar-compra")
   }
-  const ColorButton = styled(Button)(({ theme }) => ({
-    color: '#fff',
-    backgroundColor: '#C99DB4',
-    border: 'none',
-    margin: '10px 20px',
-    '&:hover': {
-      backgroundColor: '#5B3C66',
-      border: 'none',
-      margin: '10px 20px'
-    },
-  }));
+ 
   return (
     <div className='container container-principal' >
       <div className='container  m-5 img'><img className='img-1'src={torta}  alt="..."/></div>
@@ -168,8 +156,8 @@ const ProductItem = () => {
    
     >
 <div className='buttons d-flex '>
-<ColorButton  startIcon={<ShoppingCartIcon />}  variant="outlined" onClick={AddtoCart}>Añadir al carrito</ColorButton >
-<ColorButton  variant="contained"  onClick={BuyNow} >Comprar</ColorButton>
+<MyButton  startIcon={<ShoppingCartIcon />}  variant="outlined" onClick={AddtoCart}>Añadir al carrito</MyButton >
+<MyButton  variant="contained"  onClick={BuyNow} >Comprar</MyButton>
 </div>
 </Box>
    

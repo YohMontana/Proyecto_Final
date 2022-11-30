@@ -5,7 +5,10 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import "./style.css"
 import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
 function CardFooter() {
+
+
     return(
         <div className='container'>
             <div >
@@ -16,11 +19,8 @@ function CardFooter() {
                     <div className='col-md-3 col-sm-12'>
                         <h2 className='fw-bold text-center'>Links de Interés</h2>
                         <div className='row m-3 text-center'>
-                            <a href="/terminos-y-condiciones" className='text-decoration-none p-2'>
-                            <h5 className="text-center" id="link">Términos y Condiciones</h5>
-                            </a>
-                            <a href="preguntas-frecuentes" className='text-decoration-none p-2'><h5 className="text-center" id="link">Preguntas Frecuentes</h5></a>
-                            <a href="libro-de-reclamaciones" className='text-decoration-none p-2'><h5 className="text-center" id="link">Libro de Reclamaciones</h5></a>
+                        <Link to="/terminos-y-condiciones"><h5 className="text-center" id="link">Preguntas Frecuentes</h5></Link>
+                        <Link to="/libro-de-reclamaciones"><h5 className="text-center" id="link">Libro de Reclamaciones</h5></Link>
                         </div>
                     </div>
                     <div className='col-md-3 col-sm-12 text-center'>

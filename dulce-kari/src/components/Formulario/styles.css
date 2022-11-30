@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Cookie&family=Fuzzy+Bubbles&family=Lobster&family=Pacifico&family=Redressed&family=Shadows+Into+Light&family=Vujahday+Script&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+.contacta {
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 200px;
+}
+
+#h1 {
+  color: #ED719F;
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: 'Comfortaa', cursive;
+  margin-bottom: 20px;
+}
+
+.form-mail {
+  width: 40rem;
+  border: groove 3px #ffff;
+  border-radius:15px;
+  box-shadow: -3px -2px 1px #535366;
+  background: #ffff;  
+  background: linear-gradient(to right, #5B3C66, #ED719F);  
+  opacity: 0.8;  
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+hr {
+  width: 20rem;
+}
+
+label {
+  font-size: 1.5rem;
+  color: #ffff;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  font-size: 1.5rem;
+  background: transparent;
+  box-shadow: 0 -2px 2px rgb(199, 194, 194);
+  border-radius: 20px;
+  color: #545454;
+  padding: 10px 20px;
+  width: 80%;
+  background-color: #ffff;
+}
+
+textarea {
+  border-radius: 10px;
+  background-color: #ffff;
+  padding: 5rem;
+  font-size: 1.5rem;
+  height: 300px;
+}
+

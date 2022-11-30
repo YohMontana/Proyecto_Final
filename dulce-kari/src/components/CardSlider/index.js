@@ -5,8 +5,6 @@ import 'swiper/css';
 import"swiper/css/free-mode";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductCard from '../ProductCard';
-import { styled } from '@mui/material/styles';
-import {Button} from "@mui/material";
 import r1 from "../../asset/gif/r1.jpg";
 import r3 from "../../asset/gif/r3.jpg";
 import r4 from "../../asset/gif/r4.jpg";
@@ -14,23 +12,9 @@ import r5 from "../../asset/gif/r5.jpg";
 import r6 from "../../asset/gif/r6.jpg";
 import r7 from "../../asset/gif/r7.jpg";
 import "./styles.css"
+import MyButton from "../MyButton"
 
 const CardSlider = () => {
-  
-  const ColorButton = styled(Button)(({ theme }) => ({
-    color: '#fff',
-    backgroundColor: '#545454',
-    border: 'none',
-    margin: '10px 10px',
-    padding: '12px',
-    borderRadius: '10PX',
-    textDecoration: 'none',
-    '&:hover': {
-      backgroundColor: '#5C636A',
-      border: 'none',
-      margin: '10px 10px'
-    },
-  }));
 
     return (
       <div className='container'>
@@ -76,8 +60,7 @@ const CardSlider = () => {
         <div className='row w-100 align-items-center'>
           <div className='col text-center'>
             <a href="/tienda" >
-            <ColorButton>Ver más productos</ColorButton>
-            {/* <button className='btn mb-5 py-2'>Ver Mas Productos</button> */}
+            <MyButton>Ver más productos</MyButton>
             </a>
             
           </div>

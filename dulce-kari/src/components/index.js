@@ -11,3 +11,7 @@ export { default as CardFooter} from "./CardFooter"
 export { default as PreguntasFrecuentes} from './PreguntasFrecuentes'
 export { default as TerminosCondiciones} from './TerminosCondiciones'
 export { default as LibroDeReclamaciones} from './LibroDeReclamaciones'
+export { default as GridProducts} from "./GridProducts"
+export { default as BotonFlotante} from './BotonFlotante'
+export { default as Mailer} from './Formulario'
+export { default as Encuentranos} from './Encuentranos'

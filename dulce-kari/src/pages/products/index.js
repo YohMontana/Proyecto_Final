@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PostProduct } from "../../services/ProductsServices";
+import { PostProduct } from "../../services";
 import regalo1 from "../../asset/gif/regalo1.jpg";
 
 
