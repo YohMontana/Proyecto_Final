@@ -1,7 +1,7 @@
 import { Mailer } from '../../components' 
 import { Encuentranos } from '../../components'
 import { CardFooter } from '../../components';
-
+import {Division} from '../../components';
 
 
 function Contactanos () {
@@ -9,6 +9,7 @@ function Contactanos () {
     <>
       <Mailer></Mailer>     
       <Encuentranos></Encuentranos>
+      <Division></Division>
       <CardFooter></CardFooter>
     </> 
 

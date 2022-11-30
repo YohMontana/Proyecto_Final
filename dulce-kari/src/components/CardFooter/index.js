@@ -10,9 +10,9 @@ function CardFooter() {
 
 
     return(
-        <div className='container'>
+        <div className='full-container'>
             <div >
-                <div className='row py-5 text-dark text-center'>
+                <div className='row p-5 text-dark text-center'>
                     <div className='col-md-3 col-sm-12 text-center'>
                         <a href="/"><img src={Logo} className='img-fluid rounded-circle mt-5 mb-5' width='150px'/></a>
                     </div>

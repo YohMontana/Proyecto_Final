@@ -65,7 +65,7 @@ const MainLayout = ()=>{
           <Toolbar disableGutters>
 
 
-             <a className="navbar-brand" href="/"><img src={logo} alt="" width="50" />
+             <a className="navbar-brand" href="/"><img className="logo" src={logo} alt="" width="50" />
              </a>
 
 {/* MENU COMPRIMIDO ---------------------------------*/}
