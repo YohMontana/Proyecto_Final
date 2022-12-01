@@ -11,13 +11,6 @@ const MainLayout = ()=>{
     const history = useNavigate();
 
 
-    const validateIsLogged = () => {
-        const user = JSON.parse(localStorage.getItem("user"));
-        if(!user) history("/login")
-    };
-    useEffect(() => {
-        validateIsLogged();
-    }, []);
 
     return (
         <div>

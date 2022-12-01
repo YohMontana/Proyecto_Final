@@ -18,9 +18,7 @@ const Login = () => {
             ...user,
             [e.target.name]: e.target.value,
         });
-        
-        
-    }
+    };
 
     const handleLogin = () => {
         if (!user.email || !user.password) {
@@ -32,24 +30,21 @@ const Login = () => {
             });
             return;
         } 
+            localStorage.setItem("user", JSON.stringify(user));
+            validateIsLogged();
+     };
 
-        localStorage.setItem("user", JSON.stringify(user));
-        validateIsLogged();
-        
-
-    }
-
-    const validateIsLogged = () => {
+     const validateIsLogged = () => {
         const user = JSON.parse(localStorage.getItem("user"));
-        if(user) history("/tienda")
-        
+        console.log(user);
+        if(user) history("/tienda");
+     };
 
-    }
-
-    useEffect(() => {
+     useEffect(() => {
         validateIsLogged()
-    }, [])
+     }, [])
 
+    
 
     return(
         <div className="container">
