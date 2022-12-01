@@ -1,13 +1,18 @@
 import { Store } from "../../components";
 import {CardFooter} from '../../components';
-import React from 'react';
+import {BotonFlotante} from '../../components'
+import {Division} from '../../components';
 
 
 const Stores = () => {
     return (
         <>
+         <BotonFlotante></BotonFlotante>
         <Store></Store>
+        <Division></Division>
         <CardFooter></CardFooter>
+      
+    
         </>
         
     );

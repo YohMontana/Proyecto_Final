@@ -1,17 +1,33 @@
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+<<<<<<< HEAD
 import "./styles.css";
 
 function BotonFlotante() {
+=======
+import { useNavigate} from "react-router-dom";
+import "./styles.css";
+
+function BotonFlotante() {
+
+
+>>>>>>> 02fe2bfaf5cab3046016da90cba98e913f8c0361
   return (
     <div className="float">
       <input type="checkbox" id="btn-mas" />
       <div className="redes">
+<<<<<<< HEAD
         <a href="https://wa.link/hu2flm">
           <WhatsAppIcon />
         </a>
         <a href="https://web.facebook.com/DulcesKari1">
+=======
+        <a href="https://api.whatsapp.com/send?phone=+51971412245&text=Hola,%20quiero%20informaci%C3%B3n%20sobre..." target="_blank">
+          <WhatsAppIcon />
+        </a>
+        <a href="https://web.facebook.com/DulcesKari1" target="_blank">
+>>>>>>> 02fe2bfaf5cab3046016da90cba98e913f8c0361
           <FacebookIcon />
         </a>
       </div>
@@ -28,4 +44,8 @@ function BotonFlotante() {
   );
 }
 
+<<<<<<< HEAD
 export default BotonFlotante;
+=======
+export default BotonFlotante;
+>>>>>>> 02fe2bfaf5cab3046016da90cba98e913f8c0361

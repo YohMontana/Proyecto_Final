@@ -5,9 +5,8 @@ import './style.css'
 const Store = () => {
     return (
         <frames>
-
-            <div className='navbar'>
-                <h1>Tienda</h1>
+            <div className='navdar'>
+               <h2>Tienda / Inicio</h2>
             </div>
 
             <div className='flex'>
@@ -31,7 +30,7 @@ const Store = () => {
                     </ul>
 
                 </div>
-                <div className='content'>
+                <div className='container'>
                 <Outlet />
                 </div>
 

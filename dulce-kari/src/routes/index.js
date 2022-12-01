@@ -1,16 +1,17 @@
-// Paso1: Importar los componentes de React Router DOM
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// Pas2: Importar nuestras vistas
 import { HomeView,
   AboutView,
   StoreView,
   ProductView,
    Product,
-    PreguntasFrecuentes, 
+   Preguntas, 
     TerminosCondiciones, 
     LibroReclamaciones, 
     LoginView,
+<<<<<<< HEAD
+=======
+    RegistroView,
+>>>>>>> 02fe2bfaf5cab3046016da90cba98e913f8c0361
     ContactanosView} from "../pages";
 import { MainLayout } from "../layouts";
 import { Bocaditos } from "../components/Store/Bocaditos";
@@ -18,7 +19,6 @@ import { CupCake } from "../components/Store/Cupcake";
 import { Tortas } from "../components/Store/Tortas";
 
 
-// path => Nombre de la ruta /, /login, /registro
 
 const Router = () => {
   return (
@@ -36,11 +36,16 @@ const Router = () => {
           </Route>
           <Route path="/postproduct" element={<ProductView/>} />
           <Route path="/product" element={<Product/>}/>
-          <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes/>} />
+          <Route path="/preguntas-frecuentes" element={<Preguntas/>} />
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones/>} />
           <Route path="/libro-de-reclamaciones" element={<LibroReclamaciones/>} />
           <Route path="/login" element={<LoginView/>} /> 
+<<<<<<< HEAD
           <Route path="/Contactanos" element={<ContactanosView/>} /> 
+=======
+          <Route path="/registro" element={<RegistroView/>} />
+          <Route path="/Contactanos" element={<ContactanosView/>} />
+>>>>>>> 02fe2bfaf5cab3046016da90cba98e913f8c0361
         
         </Route>
       

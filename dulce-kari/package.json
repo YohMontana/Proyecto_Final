@@ -17,10 +17,15 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
+    "react-floating-whatsapp": "^5.0.6",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",
+<<<<<<< HEAD
     "sweetalert2": "^11.6.14",
+=======
+    "sweetalert2": "^11.6.15",
+>>>>>>> 02fe2bfaf5cab3046016da90cba98e913f8c0361
     "swiper": "^8.4.5",
     "web-vitals": "^2.1.4"
   },

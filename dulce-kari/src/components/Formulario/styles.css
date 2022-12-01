@@ -3,17 +3,11 @@
 body {
   margin: 0;
   padding: 0;
-  /* background: linear-gradient(-30deg, );   */
-  /* width: 100vw; */
-  /* height: 100vh; */
-  /* display: flex; */
-  /* flex-direction: column;   */
-  /* align-items: center; */
-  /* justify-items: center;   */
+ 
 }
 
 .contacta {
-  /* width: 100vh; */
+
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -23,7 +17,7 @@ body {
   margin-bottom: 200px;
 }
 
-h1 {
+#h1 {
   color: #ED719F;
   font-size: 3rem;
   font-weight: 600;
@@ -36,7 +30,7 @@ h1 {
   border: groove 3px #ffff;
   border-radius:15px;
   box-shadow: -3px -2px 1px #535366;
-  background: #C99DB4;  
+  background: #ffff;  
   background: linear-gradient(to right, #5B3C66, #ED719F);  
   opacity: 0.8;  
   padding: 1rem;
@@ -51,39 +45,27 @@ hr {
 
 label {
   font-size: 1.5rem;
-  color: #9cc7f3;
-  font-weight: 900;
+  color: #ffff;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
 input {
-  font-size: 2.6rem;
+  font-size: 1.5rem;
   background: transparent;
   box-shadow: 0 -2px 2px rgb(199, 194, 194);
   border-radius: 20px;
-  color: #ffff;
+  color: #545454;
+  padding: 10px 20px;
+  width: 80%;
+  background-color: #ffff;
 }
 
 textarea {
   border-radius: 10px;
-  background-color: #C99DB4;
+  background-color: #ffff;
   padding: 5rem;
   font-size: 1.5rem;
   height: 300px;
 }
 
-button {
-  width: 10rem;
-  border-radius: 20px;
-  font-size: 2rem;
-  color: #5B3C66;
-  background-color: #5B3C66;
-  cursor: pointer;
-}
-
-button:hover{
-  background-color: #5B3C66;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #9cc7f3;
-}
