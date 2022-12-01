@@ -12,7 +12,7 @@ const ProductCard = (props) => {
 
     const history = useNavigate();
     const ViewDetail = () =>{
-        history ("/product")
+        history ("/product/1")
     }
     return (
        

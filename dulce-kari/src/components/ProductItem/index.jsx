@@ -1,12 +1,12 @@
 import * as React from 'react';
 import MenuItem from '@mui/material/MenuItem';
-import { useNavigate} from "react-router-dom";
+import {  useNavigate} from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MyButton from "../MyButton"  
-import torta from "../../asset/img/torta.jpg"
 import {
   Box,
   TextField,
+  Typography
 } from "@mui/material";
 import "./styles.css"
 
@@ -34,35 +34,49 @@ const cakes = [
   },
 ];
 
-const ProductItem = () => {
-  
+function ProductItem(props){
+ 
+  const { product } = props;
+
+
   const [cake, setcake] = React.useState();
 
   const handleChangeA = (event) => {
     setcake(event.target.value);
+    
   };
   const handleChangeB = (event) => {
     setcake(event.target.value);
   };
+
   const handleChangeC = (event) => {
-    setcake(event.target.value);
+   
+      setcake(event.target.value); 
+
   };
-  const history = useNavigate();
+
+const history = useNavigate();
+
     const AddtoCart = () =>{
-        history ("/carrito")
+     
     }
     const BuyNow = () =>{
       history ("/finalizar-compra")
   }
+
  
   return (
-    <div className='container container-principal' >
-      <div className='container  m-5 img'><img className='img-1'src={torta}  alt="..."/></div>
+<div>
+  <div className='container container-principal' >
+  <div className='container  m-5 img'><img className='img-1'src={product.imagen}  alt="..."/></div>
  <div className='container m-5 '>
-  <h1>Torta de Cumpleaños</h1>
+  <h1>{product.name}</h1>
   
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eos saepe alias magni nihil quia repellat quam veritatis! Consequuntur libero ex molestias similique facilis voluptates doloremque, perspiciatis sequi mollitia et?</p>
-  <h2>s/.30</h2>
+  <p>{product.descripcion}</p>
+
+  <Typography
+    variant="h5"
+  >s/.{product.precio}</Typography>
     <Box
     className='m-3 '
       component="form"
@@ -145,6 +159,7 @@ const ProductItem = () => {
       }}>
       <TextField id="outlined-textarea"
           label="Dedicatoria"
+         
           placeholder="Feliz cumpleaños..."
           multiline/></Box>
           <Box
@@ -156,13 +171,31 @@ const ProductItem = () => {
    
     >
 <div className='buttons d-flex '>
-<MyButton  startIcon={<ShoppingCartIcon />}  variant="outlined" onClick={AddtoCart}>Añadir al carrito</MyButton >
-<MyButton  variant="contained"  onClick={BuyNow} >Comprar</MyButton>
+
+
+<MyButton  
+startIcon={<ShoppingCartIcon />}  
+
+variant="outlined" onClick={AddtoCart}>
+  Añadir al carrito</MyButton >
+{
+
+
+
+
+<MyButton  variant="contained"  
+
+onClick={BuyNow} >Comprar</MyButton>
+
+}
+
 </div>
 </Box>
    
     </div>
      </div>
+    
+</div>
   );
 }
 export default ProductItem;

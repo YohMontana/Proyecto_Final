@@ -16,7 +16,6 @@ import Avatar from '@mui/material/Avatar';
 
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { button } from "react-bootstrap"
 
 import "./styles.css"
 
@@ -25,14 +24,8 @@ import "./styles.css"
 const MainLayout = ()=>{
 
 
-    // const history = useNavigate();
-    // const validateIsLogged = () => {
-    //     const user = JSON.parse(localStorage.getItem("user"));
-    //     if(!user) history("/login")
-    // };
-    // useEffect(() => {
-    //     validateIsLogged();
-    // }, []);
+    const history = useNavigate();
+
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);

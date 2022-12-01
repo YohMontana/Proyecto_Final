@@ -32,7 +32,7 @@ const Router = () => {
 
           </Route>
           <Route path="/postproduct" element={<ProductView/>} />
-          <Route path="/product" element={<Product/>}/>
+          <Route path="/product/:id" element={<Product/>}/>
           <Route path="/preguntas-frecuentes" element={<Preguntas/>} />
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones/>} />
           <Route path="/libro-de-reclamaciones" element={<LibroReclamaciones/>} />
