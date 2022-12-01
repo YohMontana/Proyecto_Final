@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { Divider, Paper, Typography} from "@mui/material";
+
+import { GridProducts } from "../../../components";
+
+import {GetProduct} from "../../../services"
 
 export const Bocaditos = () => {
+
+    const [produtos, setProductos] = useState([]);
+
+    useEffect(()=>{
+        getData();
+    },[])
+
+   const getData = async ()=> {
+    const data = await GetProduct()
+    const resul = data.filter((product, index) => product.categoria === "Bocadito")
+  
+    setProductos(resul)
+   }
+
     return (
-        <div>
-            <h1> hola Bocaditos</h1>
-        </div>
+        <>
+          <Paper>
+                <Typography variant='h4' textAlign="center">
+                    
+                </Typography>
+            </Paper>
+            <Divider sx={{margin: 3}} />
+            <GridProducts products={produtos}/>
+
+        </>
+          
+  
     );
 }

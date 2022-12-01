@@ -16,8 +16,9 @@ export const Tortas = () => {
 
    const getData = async ()=> {
     const data = await GetProduct()
-    console.log(data)
-    setProductos(data)
+    const resul = data.filter((product, index) => product.categoria === "Torta")
+  
+    setProductos(resul)
    }
 
     return (
