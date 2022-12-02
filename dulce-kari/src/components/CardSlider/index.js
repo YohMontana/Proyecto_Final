@@ -5,16 +5,35 @@ import 'swiper/css';
 import"swiper/css/free-mode";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductCard from '../ProductCard';
-import r1 from "../../asset/gif/r1.jpg";
-import r3 from "../../asset/gif/r3.jpg";
-import r4 from "../../asset/gif/r4.jpg";
-import r5 from "../../asset/gif/r5.jpg";
-import r6 from "../../asset/gif/r6.jpg";
-import r7 from "../../asset/gif/r7.jpg";
+import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { GetProduct } from "../../services";
 import "./styles.css"
 import MyButton from "../MyButton"
-
+import { Grid} from "@mui/material";
 const CardSlider = () => {
+
+
+
+    const [product, setProduct] = useState([]);
+    
+
+
+	// setProduct(productItem);
+	
+
+	useEffect(() => {
+	
+    getData();
+	}, []);
+  const getData = async ()=> {
+    const data = await GetProduct()
+    const resul = data.filter((product, index) => product.categoria === "Torta")
+  
+    setProduct(resul)
+   }
+
+
 
     return (
       <div className='container'>
@@ -22,6 +41,8 @@ const CardSlider = () => {
     
       </div>
       <div className='container py-4 px-4 justify-content-center mt-5 mb-5'>
+
+
         <Swiper
           freeMode={true}
           grabCursor={true}
@@ -29,30 +50,21 @@ const CardSlider = () => {
           className="mySwiper"
           slidesPerView={3.5}
         >
-          <SwiperSlide>
-            <ProductCard data={{ imgSrc: r1, price: 's/. 30 ', title: 'El mejor arreglo #1' }} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard data={{ imgSrc: r3, price: 's/. 30 ', title: 'El mejor arreglo #1' }} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard data={{ imgSrc: r3, price: 's/. 30 ', title: 'El mejor regalo #1' }} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard data={{ imgSrc: r4, price: 's/. 30 ', title: 'El mejor regalo #1' }} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard data={{ imgSrc: r5, price: 's/. 30 ', title: 'El mejor regalo #1' }} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard data={{ imgSrc: r6, price: 's/. 30 ', title: 'El mejor regalo #1' }} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard data={{ imgSrc: r7, price: 's/. 30 ', title: 'El mejor regalo #1' }} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard data={{ imgSrc: r1, price: 's/. 30 ', title: 'El mejor regalo #1' }} />
-          </SwiperSlide>
+         
+            
+          <Grid container spacing={3}>
+          {product.length > 0 &&
+                    product.map((producto, index) => (
+
+          <Grid key={index} item md={2} xs={12}>
+             <SwiperSlide>
+            <ProductCard producto={producto} />
+            </SwiperSlide>
+            </Grid>
+         ))}
+           </Grid>
+      
+         
         </Swiper>
       </div>
 

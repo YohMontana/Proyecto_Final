@@ -2,14 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomeView,
   AboutView,
   StoreView,
-  ProductView,
    Product,
    Preguntas, 
     TerminosCondiciones, 
     LibroReclamaciones, 
     LoginView,
     RegistroView,
-    ContactanosView} from "../pages";
+    ContactanosView,
+  AddNewProduct} from "../pages";
 import { MainLayout } from "../layouts";
 import { Bocaditos } from "../components/Store/Bocaditos";
 import { CupCake } from "../components/Store/Cupcake";
@@ -31,7 +31,7 @@ const Router = () => {
             
 
           </Route>
-          <Route path="/postproduct" element={<ProductView/>} />
+          <Route path="/postproduct" element={<AddNewProduct/>} />
           <Route path="/product/:id" element={<Product/>}/>
           <Route path="/preguntas-frecuentes" element={<Preguntas/>} />
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones/>} />
