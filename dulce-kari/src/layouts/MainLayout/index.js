@@ -64,22 +64,6 @@ const MainLayout = ()=>{
 
           <Toolbar disableGutters>
 
-<<<<<<< HEAD
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ml-auto fw-bold ">
-                            <li className="nav-item"><a className="nav-link active" aria-current="page" href="/">Inicio</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/about">Nosotros</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/tienda">Tienda</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/contactanos">Contactanos</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/login">Iniciar sesión</a></li>
-                        </ul>
-                     
-                    </div>
-                </div>
-            </nav>
-          <Outlet />
-        </div>
-=======
 
              <a className="navbar-brand" href="/"><img className="logo" src={logo} alt="" width="50" />
              </a>
@@ -324,7 +308,6 @@ const MainLayout = ()=>{
       </AppBar>
       <Outlet />
       </>
->>>>>>> 02fe2bfaf5cab3046016da90cba98e913f8c0361
       );
 }
 

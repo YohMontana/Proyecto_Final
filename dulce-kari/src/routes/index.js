@@ -8,10 +8,7 @@ import { HomeView,
     TerminosCondiciones, 
     LibroReclamaciones, 
     LoginView,
-<<<<<<< HEAD
-=======
     RegistroView,
->>>>>>> 02fe2bfaf5cab3046016da90cba98e913f8c0361
     ContactanosView} from "../pages";
 import { MainLayout } from "../layouts";
 import { Bocaditos } from "../components/Store/Bocaditos";
@@ -40,12 +37,8 @@ const Router = () => {
           <Route path="/terminos-y-condiciones" element={<TerminosCondiciones/>} />
           <Route path="/libro-de-reclamaciones" element={<LibroReclamaciones/>} />
           <Route path="/login" element={<LoginView/>} /> 
-<<<<<<< HEAD
-          <Route path="/Contactanos" element={<ContactanosView/>} /> 
-=======
           <Route path="/registro" element={<RegistroView/>} />
           <Route path="/Contactanos" element={<ContactanosView/>} />
->>>>>>> 02fe2bfaf5cab3046016da90cba98e913f8c0361
         
         </Route>
       

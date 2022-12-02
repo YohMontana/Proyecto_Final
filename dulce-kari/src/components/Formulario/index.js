@@ -1,7 +1,6 @@
 import React from "react";
 import emailjs from "@emailjs/browser";
 import "./styles.css";
-import Swal from "sweetalert2";
 import MyButton from "../MyButton"  
 
 export const Mailer = () => {
