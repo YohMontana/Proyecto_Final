@@ -9,7 +9,8 @@ import { HomeView,
     LoginView,
     RegistroView,
     ContactanosView,
-  AddNewProduct} from "../pages";
+  AddNewProduct,
+  BasketView,} from "../pages";
 import { MainLayout } from "../layouts";
 import { Bocaditos } from "../components/Store/Bocaditos";
 import { CupCake } from "../components/Store/Cupcake";
@@ -39,7 +40,7 @@ const Router = () => {
           <Route path="/login" element={<LoginView/>} /> 
           <Route path="/registro" element={<RegistroView/>} />
           <Route path="/Contactanos" element={<ContactanosView/>} />
-        
+          <Route path="/carrito" element={<BasketView/>} />
         </Route>
       
       </Routes>

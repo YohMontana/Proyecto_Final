@@ -25,7 +25,7 @@ export const CupCake = () => {
         <>
           <Paper>
                 <Typography variant='h4' textAlign="center">
-                    
+                Categoria CupCakes
                 </Typography>
             </Paper>
             <Divider sx={{margin: 3}} />

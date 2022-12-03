@@ -42,8 +42,8 @@ function CardFooter() {
                         </div>
                     </div>
                     <div className='col-md-3 col-sm-12 text-center'>
-                        <h2 className='fw-bold pb-3 d-flex justify-content-start'>Síguenos</h2>
-                        <div className='col-md-3 col-sm-12 d-flex justify-content-center align-content-center'>
+                    <h2 className='fw-bold pb-3 d-flex justify-content-center'>Síguenos</h2>
+                        <div className='col-md-3 col-sm-12'>
                      <a href="https://www.facebook.com/DulcesKari1" target="_blank" ><IconButton color="secondary" >
                         <FacebookIcon />
                         </IconButton></a>
