@@ -14,4 +14,4 @@ export { default as GridProducts} from "./GridProducts"
 export { default as BotonFlotante} from './BotonFlotante'
 export { default as Mailer} from './Formulario'
 export { default as Encuentranos} from './Encuentranos'
-export { default as InfoUbicacion} from './InfoUbicacion'
+export { default as ListProduct} from './ListProduct'

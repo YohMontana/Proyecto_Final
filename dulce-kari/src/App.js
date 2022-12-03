@@ -1,9 +1,11 @@
+import { ProductProvider } from "./context/ProductContext";
 import Router from "./routes";
 
 function App() {
   return (
-    
-      <Router />
+    <ProductProvider>
+      <Router />       
+    </ProductProvider>
   );
 }
 

@@ -1,3 +1,12 @@
+/* .productcontainer{
+display: flex;
+
+flex-wrap: nowrap;
+width: 100%
+}
+
+ */
+
 .btn{
     background-color: #C99DB4;
     border: none;
@@ -15,3 +24,5 @@
     color: #737373;
    
 }
+
+
