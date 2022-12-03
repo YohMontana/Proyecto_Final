@@ -99,7 +99,7 @@ const Basket = () => {
                 <Typography my={2} fontWeight="bold">
                   Total: {total}
                 </Typography>
-                <Button fullWidth variant="contained" color="warning">
+                <Button fullWidth variant="contained" sx={{backgroundColor:"#C99DB4" }}>
                   Comprar
                 </Button>
               </CardContent>

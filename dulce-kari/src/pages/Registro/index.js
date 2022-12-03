@@ -28,7 +28,7 @@ function Registro() {
 			data.get("password")
 		);
 		await postUser(newUser);
-		history("/tienda");
+		history("/login");
 	};
 	return (
 		<Container component="main" maxWidth="xs">

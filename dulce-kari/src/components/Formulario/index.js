@@ -1,7 +1,6 @@
 import React from "react";
 import emailjs from "@emailjs/browser";
 import "./styles.css";
-import MyButton from "../MyButton"  
 
 export const Mailer = () => {
   const sendEmail = (event) => {
@@ -37,7 +36,7 @@ export const Mailer = () => {
         <label>Mensaje</label>
         <textarea name="user_message" id="" cols="30" rows="10"></textarea>
         <hr />
-        <MyButton className="btn btn-success">Enviar</MyButton>
+        <button className="btn btn-success">Enviar</button>
       </form>
     </div>
   );
