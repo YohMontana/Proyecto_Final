@@ -1,12 +1,36 @@
-import React from 'react';
+
 import { Link, Outlet } from 'react-router-dom';
 import './style.css'
+import { useEffect, useState } from 'react';
+
+import { Divider, Paper, Typography } from "@mui/material";
+
+import { GridProducts } from "../../components";
+
+import { GetProduct } from "../../services"
 
 const Store = () => {
+
+
+    const [produtos, setProductos] = useState([]);
+
+    useEffect(() => {
+        getData();
+    }, [])
+
+    const getData = async () => {
+        const data = await GetProduct()
+
+        setProductos(data)
+
+    }
+
+
     return (
-        <frames>
-            <div className='navdar'>
-               <h2>Tienda / Inicio</h2>
+        <div>
+
+            <div className='navbar'>
+                <h1>Tienda</h1>
             </div>
 
             <div className='flex'>
@@ -31,13 +55,21 @@ const Store = () => {
 
                 </div>
                 <div className='container'>
-                <Outlet />
+
+                    <Paper>
+                        <Typography variant='h4' textAlign="center">
+                            Categoria Tortas
+                        </Typography>
+                    </Paper>
+                    <Divider sx={{ margin: 3 }} />
+                    <GridProducts products={produtos} />
+                    <Outlet />
                 </div>
 
 
             </div>
 
-        </frames>
+        </div>
 
     );
 }
