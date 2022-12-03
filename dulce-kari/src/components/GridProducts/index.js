@@ -1,14 +1,10 @@
-import { Grid, Paper, Typography, Card, CardMedia,Button } from "@mui/material";
-import { useNavigate} from "react-router-dom";
+import { Grid, Paper, Typography, Card, CardMedia, Button} from "@mui/material";
+import { Link } from 'react-router-dom';
+import MyButton from "../MyButton"
 
 function GridProducts(props) {
     const { products } = props;
     
-    const history = useNavigate();
-    const ViewDetail = () =>{
-        history ("/product")
-    }
-
 
     return (
         <>
@@ -32,8 +28,9 @@ function GridProducts(props) {
                                 </Card>
                             </Paper>
                             <Paper sx={{ padding: 3 }}>
-                                <Typography>{product.precio} {"/ "} Soles</Typography>
-                                     <Button variant="contained"  onClick={ViewDetail} >Ver Detalle</Button>
+                                <Typography>s/. {product.precio}</Typography>
+                                <MyButton><Link to={"/product/" + product.id}>Ver detalles</Link></MyButton>
+                               
                             </Paper>
                         </Grid>
                     ))}

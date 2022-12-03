@@ -1,90 +1,64 @@
-import { useEffect } from "react"
-import { useNavigate, Outlet } from "react-router-dom"
- import logo from "../../asset/img/logo.jpg"
- import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { Link} from 'react-router-dom';
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+import { useState, useContext } from "react";
+import { useEffect } from "react";
+import { useNavigate, Outlet } from "react-router-dom";
+import logo from "../../asset/img/logo.jpg";
+import AddShoppingCartRoundedIcon from "@mui/icons-material/AddShoppingCartRounded";
+import { Link } from "react-router-dom";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { ProductContext } from "../../context/ProductContext";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Badge from "@mui/material/Badge";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
 
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import { button } from "react-bootstrap"
+import "./styles.css";
 
-import "./styles.css"
+const MainLayout = () => {
+  const history = useNavigate();
 
+  const { cartProducts } = useContext(ProductContext);
 
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-const MainLayout = ()=>{
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
 
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
-    // const history = useNavigate();
-    // const validateIsLogged = () => {
-    //     const user = JSON.parse(localStorage.getItem("user"));
-    //     if(!user) history("/login")
-    // };
-    // useEffect(() => {
-    //     validateIsLogged();
-    // }, []);
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-      };
-      const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-      };
-    
-      const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-      };
-    
-      const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-      };
-    
-
-    return (
-        <>
-        <AppBar 
+  return (
+    <>
+      <AppBar
         sx={{
-            backgroundColor: '#ED719F',
-          }}
-        position="static">
+          backgroundColor: "#ED719F",
+        }}
+        position="static"
+      >
         <Container maxWidth="xl">
-
           <Toolbar disableGutters>
+            <a className="navbar-brand" href="/">
+              <img className="logo" src={logo} alt="" width="50" />
+            </a>
 
-<<<<<<< HEAD
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ml-auto fw-bold ">
-                            <li className="nav-item"><a className="nav-link active" aria-current="page" href="/">Inicio</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/about">Nosotros</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/tienda">Tienda</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/contactanos">Contactanos</a></li>
-                            <li className="nav-item"><a className="nav-link" href="/login">Iniciar sesión</a></li>
-                        </ul>
-                     
-                    </div>
-                </div>
-            </nav>
-          <Outlet />
-        </div>
-=======
-
-             <a className="navbar-brand" href="/"><img className="logo" src={logo} alt="" width="50" />
-             </a>
-
-{/* MENU COMPRIMIDO ---------------------------------*/}
+            {/* MENU COMPRIMIDO ---------------------------------*/}
             <Typography
               variant="h6"
               noWrap
@@ -94,18 +68,18 @@ const MainLayout = ()=>{
               sx={{
                 mr: 3,
                 padding: "8px",
-                display: { xs: 'none', md: 'flex' },
+                display: { xs: "none", md: "flex" },
                 fontFamily: " 'Comfortaa', cursive",
                 fontWeight: 700,
-                letterSpacing: '.1rem',
-                color: '#fff',
-                textDecoration: 'none',
+                letterSpacing: ".1rem",
+                color: "#fff",
+                textDecoration: "none",
               }}
-            >             
-             Dulces Kari
+            >
+              Dulces Kari
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -120,36 +94,52 @@ const MainLayout = ()=>{
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
+                  vertical: "bottom",
+                  horizontal: "left",
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
+                  vertical: "top",
+                  horizontal: "left",
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: 'block', md: 'none' },
+                  display: { xs: "block", md: "none" },
                 }}
               >
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography className="menuComprimido" textAlign="center"><Link to="/" className="menuComprimido">Inicio</Link></Typography>
-                  </MenuItem>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography ><Link to="/about" className="menuComprimido">Nosotros</Link></Typography>
-                  </MenuItem>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography ><Link to="/tienda" className="menuComprimido">Tienda</Link></Typography>
-                  </MenuItem>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography  ><Link to="/contactanos" className="menuComprimido">Contáctanos</Link></Typography>
-                  </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography className="menuComprimido" textAlign="center">
+                    <Link to="/" className="menuComprimido">
+                      Inicio
+                    </Link>
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography>
+                    <Link to="/about" className="menuComprimido">
+                      Nosotros
+                    </Link>
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography>
+                    <Link to="/tienda" className="menuComprimido">
+                      Tienda
+                    </Link>
+                  </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography>
+                    <Link to="/contactanos" className="menuComprimido">
+                      Contáctanos
+                    </Link>
+                  </Typography>
+                </MenuItem>
               </Menu>
             </Box>
 
-{/* MENU FULL SCREAM ---------------------------------*/}
+            {/* MENU FULL SCREAM ---------------------------------*/}
 
             <Typography
               variant="h5"
@@ -159,57 +149,74 @@ const MainLayout = ()=>{
               className="tittle"
               sx={{
                 mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,  
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
                 fontFamily: " 'Comfortaa', cursive",
                 fontWeight: 700,
-                letterSpacing: '.1rem',
-                color: '#fff',
-                textDecoration: 'none',
+                letterSpacing: ".1rem",
+                color: "#fff",
+                textDecoration: "none",
               }}
             >
               Dulces Kari
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Link
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              <Link
                 component="button"
-               
-                  sx={{ my: 2, color: 'white', display: 'block'  , textDecoration: 'none',}}
-                  to="/"
-                  className="menu"
-                  > 
-                 Inicio
-            </Link>
-            <Link
-                component="button" 
-                  sx={{ my: 2, color: 'white', display: 'block' , textDecoration: 'none',}}
-                  to="/about"
-                  className="menu"
-                  > 
-                 Nosotros
-            </Link>
-            <Link
-                component="button"        
-                  sx={{ my: 2, color: 'white', display: 'block' , textDecoration: 'none',}}
-                  to="/tienda"
-                  className="menu"
-                  > 
-                 Tienda
-            </Link>
-            <Link
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  textDecoration: "none",
+                }}
+                to="/"
+                className="menu"
+              >
+                Inicio
+              </Link>
+              <Link
                 component="button"
-                  sx={{ my: 2, color: 'white', display: 'block' , textDecoration: 'none',}}
-                  to="/contactanos"
-                  className="menu"
-                  > 
-                 Contáctanos
-            </Link>
-            
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  textDecoration: "none",
+                }}
+                to="/about"
+                className="menu"
+              >
+                Nosotros
+              </Link>
+              <Link
+                component="button"
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  textDecoration: "none",
+                }}
+                to="/tienda"
+                className="menu"
+              >
+                Tienda
+              </Link>
+              <Link
+                component="button"
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  textDecoration: "none",
+                }}
+                to="/contactanos"
+                className="menu"
+              >
+                Contáctanos
+              </Link>
             </Box>
-  
 
-{/* PERFIL sesion iniciada------------------------*/}
+            {/* PERFIL sesion iniciada------------------------*/}
 
             {/* <Box sx={{  flexGrow: 0, }}>
               <Tooltip title="Open settings">
@@ -244,88 +251,101 @@ const MainLayout = ()=>{
                   </MenuItem>
               </Menu>
             </Box> */}
-{/* PERFIL sin iniciar sesion comprimido------------------------*/}
+            {/* PERFIL sin iniciar sesion comprimido------------------------*/}
 
-                    
-            <Box sx={{  flexGrow: 0, display: { xs: 'flex', lg: 'none' } }}>
+            <Box sx={{ flexGrow: 0, display: { xs: "flex", lg: "none" } }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar  src="#" />
+                  <Avatar src="#" />
                 </IconButton>
               </Tooltip>
-             
+
               <Menu
-                sx={{ mt: '45px', display: { xs: 'flex', md: 'none' }, }}
+                sx={{ mt: "45px", display: { xs: "flex", md: "none" } }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
+                  vertical: "top",
+                  horizontal: "right",
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
+                  vertical: "top",
+                  horizontal: "right",
                 }}
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
                 <MenuItem onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">Iniciar sesión</Typography>
-                  </MenuItem>
-                  <MenuItem onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">Registrarse</Typography>
-                  </MenuItem>
-        
+                  <Typography textAlign="center">Iniciar sesión</Typography>
+                </MenuItem>
+                <MenuItem onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Registrarse</Typography>
+                </MenuItem>
               </Menu>
               <IconButton
                 size="large"
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
-                aria-haspopup="true"        
+                aria-haspopup="true"
                 color="inherit"
               >
-                <AddShoppingCartIcon />
+                <Badge badgeContent={cartProducts.length} color="error">
+                  <AddShoppingCartRoundedIcon />
+                </Badge>
               </IconButton>
             </Box>
-{ /* PERFIL sin iniciar sesion full scream------------------------*/ }
+            {/* PERFIL sin iniciar sesion full scream------------------------*/}
 
-                    
-<Box sx={{  flexGrow: 0, display: { xs: 'none', lg: 'flex' } }}>
+            <Box sx={{ flexGrow: 0, display: { xs: "none", lg: "flex" } }}>
+              <MenuItem
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  textDecoration: "none",
+                }}
+              >
+                <button class="btn btn-outline me-2 btnmenu" type="button">
+                  <a href="/login">Iniciar sesión</a>
+                </button>
+              </MenuItem>
 
+              <MenuItem
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  textDecoration: "none",
+                }}
+              >
+                <button class="btn btn-outline me-2 btnmenu2" type="button">
+                  <a href="/registro">Registrarse</a>
+                </button>
+              </MenuItem>
 
-<MenuItem 
- sx={{ my: 2, color: 'white', display: 'block'  , textDecoration: 'none',}}>
-<button class="btn btn-outline me-2 btnmenu" type="button"><a href="/login">Iniciar sesión</a></button>
-      </MenuItem>
-
-       
-      <MenuItem 
- sx={{ my: 2, color: 'white', display: 'block'  , textDecoration: 'none',}}>
-<button class="btn btn-outline me-2 btnmenu2" type="button"><a href="/registro">Registrarse</a></button>
-      </MenuItem>
-
-<IconButton
+              <IconButton
                 size="large"
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
-                aria-haspopup="true"        
+                aria-haspopup="true"
                 color="inherit"
               >
-                <AddShoppingCartIcon />
+                
+                <Badge badgeContent={cartProducts.length} color="error">
+                <Link to="/carrito">
+                  <AddShoppingCartRoundedIcon />
+                </Link>
+                </Badge>                
+                
               </IconButton>
-
-  
-</Box>
-
-
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>
       <Outlet />
-      </>
->>>>>>> 02fe2bfaf5cab3046016da90cba98e913f8c0361
-      );
-}
+    </>
+  );
+};
 
 export default MainLayout;
