@@ -13,17 +13,13 @@ import {
 const Basket = () => {
   const { cartProducts, deleteItem } = useContext(ProductContext);
 
-
-  
   const total = 
         cartProducts.length > 0 &&
-        cartProducts.map((product) => product.precio).reduce((prev, curr) => prev + curr);
+        cartProducts.map((product) => parseInt(product.precio)).reduce((prev, curr) => prev + curr);
 
 
 
-
-
-
+        
     // cartProducts.length > 0 &&
     // cartProducts
       // .map((product) =>
