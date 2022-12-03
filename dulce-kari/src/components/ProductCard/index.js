@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card} from 'react-bootstrap';
-// import { Grid, Box, Paper, Typography, Card, CardMedia, CardContent} from "@mui/material";
 import { Link } from 'react-router-dom';
 import MyButton from "../MyButton"
 import "./styles.css"

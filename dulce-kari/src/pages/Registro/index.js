@@ -57,7 +57,7 @@ function Registro() {
 					sx={{ mt: 3 }}
 				>
 					<Grid container spacing={2}>
-						<Grid item xs={12} sm={6}>
+						<Grid item xs={12} >
 							<TextField
 								autoComplete="given-name"
 								name="name"
@@ -95,13 +95,13 @@ function Registro() {
 						type="submit"
 						fullWidth
 						variant="contained"
-						sx={{ mt: 3, mb: 2 }}
+						sx={{ mt: 3, mb: 2, backgroundColor: "#C99DB4" }}
 					>
 						Registrarse
 					</Button>
-					<Grid container justifyContent="flex-end">
+					<Grid container justifyContent="center">
 						<Grid item>
-							<Link to="">
+							<Link to="/login">
 								¿Ya tienes una cuenta? Acceder
 							</Link>
 						</Grid>

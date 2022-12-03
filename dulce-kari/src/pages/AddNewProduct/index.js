@@ -140,25 +140,18 @@ console.log(this.state.form);
                 </ModalHeader>
                 <ModalBody>
                   <div className="form-group">
-                    <label htmlFor="id">ID</label>
                     <input className="form-control" type="text" name="id" id="id" readOnly onChange={this.handleChange} value={form?form.id: ''}/>
                     <br />
-                    <label htmlFor="name">Nombre</label>
                     <input className="form-control" type="text" name="name" placeholder="name" id="name" onChange={this.handleChange} value={form?form.name: ''}/>
                     <br />
-                    <label htmlFor="precio">Precio</label>
                     <input className="form-control" type="number" name="precio" placeholder="precio" id="precio" onChange={this.handleChange} value={form?form.precio: ''}/>
                     <br />
-                    <label htmlFor="descripcion">descripcion</label>
                     <input className="form-control" type="text" name="descripcion" placeholder="descripcion" id="descripcion" onChange={this.handleChange} value={form?form.descripcion:''}/>
                     <br />
-                    <label htmlFor="imagen">imagen</label>
                     <input className="form-control" type="text" name="imagen" placeholder="imagen" id="imagen" onChange={this.handleChange} value={form?form.imagen:''}/>
                     <br />
-                    <label htmlFor="categoria">categoria</label>
                     <input className="form-control" type="text" name="categoria" placeholder="categoria" id="categoria" onChange={this.handleChange} value={form?form.categoria:''}/>
                     <br />
-                    <label htmlFor="stock">stock</label>
                     <input className="form-control" type="text" name="stock" placeholder="stock" id="stock" onChange={this.handleChange} value={form?form.stock:''}/>
                   </div>
                 </ModalBody>
