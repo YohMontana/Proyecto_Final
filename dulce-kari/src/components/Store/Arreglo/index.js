@@ -6,7 +6,7 @@ import { GridProducts } from "../../../components";
 
 import {GetProduct} from "../../../services"
 
-export const Tortas = () => {
+export const Arreglo = () => {
 
     const [produtos, setProductos] = useState([]);
 
@@ -16,7 +16,7 @@ export const Tortas = () => {
 
    const getData = async ()=> {
     const data = await GetProduct()
-    const resul = data.filter((product, index) => product.categoria === "Torta")
+    const resul = data.filter((product, index) => product.categoria === "Arreglo")
   
     setProductos(resul)
    }
@@ -25,7 +25,7 @@ export const Tortas = () => {
         <>
           <Paper>
                 <Typography variant='h4' textAlign="center" sx={{color: "#545454"}}>
-                Categoria Tortas
+                Categoria Arreglo
                 </Typography>
             </Paper>
             <Divider sx={{margin: 3}} />

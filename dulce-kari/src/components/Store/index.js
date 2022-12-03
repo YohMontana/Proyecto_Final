@@ -29,13 +29,11 @@ const Store = () => {
     return (
         <div>
 
-            <div className='navbar'>
-                <h1>Tienda</h1>
-            </div>
+        
 
             <div className='flex'>
                 <div className='sidebar'>
-                
+           
                     <ul>
                         <h1>Categorias</h1>
                         <li>
@@ -47,19 +45,23 @@ const Store = () => {
                         <li>
                             <Link to="/tienda/cupcake">CupCakes</Link>
                         </li>
+                        <li>
+                            <Link to="/tienda/arreglo">Arreglos</Link>
+                        </li>
                     </ul>
 
                 </div>
                 <div className='container'>
-
-                    <Paper>
-                        <Typography variant='h4' textAlign="center"sx={{ color: "#545454" }}  >
-                          
+                <Outlet />
+                    <Paper  >
+                        <Typography variant='h4' textAlign="center"sx={{ color: "#545454"}}  >
+                          Nuestros Productos
                         </Typography>
+                     
                     </Paper>
                     <Divider sx={{ margin: 3 }} />
                     <GridProducts products={produtos} />
-                    <Outlet />
+                   
                 </div>
 
 

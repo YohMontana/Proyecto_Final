@@ -22,7 +22,7 @@ function GridProducts(props) {
                                         component="img"
                                         alt="green iguana"
                                         width={140}
-                                        height="250"
+                                        height="300px"
                                         image={product.imagen}
                                     />
                                 </Card>

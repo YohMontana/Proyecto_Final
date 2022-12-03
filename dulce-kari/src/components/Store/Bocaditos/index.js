@@ -24,8 +24,8 @@ export const Bocaditos = () => {
     return (
         <>
           <Paper>
-                <Typography variant='h4' textAlign="center">
-                    
+                <Typography variant='h4' textAlign="center" sx={{color: "#545454"}}>
+                    Categoría Bocaditos
                 </Typography>
             </Paper>
             <Divider sx={{margin: 3}} />

@@ -66,7 +66,7 @@ const history = useNavigate();
      
     }
     const BuyNow = () =>{
-      history ("/finalizar-compra")
+      history ("/carrito")
   }
 
  
