@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
-
-
+import {verifyUserExist} from "../../services";
 
 
 const Login = () => {
@@ -20,7 +19,7 @@ const Login = () => {
         });
     };
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         if (!user.email || !user.password) {
             Swal.fire({
                 title: "Error",
@@ -30,8 +29,23 @@ const Login = () => {
             });
             return;
         } 
-            localStorage.setItem("user", JSON.stringify(user));
-            validateIsLogged();
+        localStorage.setItem("user", JSON.stringify(user));
+        validateIsLogged();
+
+        const data = await verifyUserExist();
+        console.log('DATA=', data);
+        const foundUser = data.find((element) => (user.email === element.email) && (user.password === element.pass) );
+        console.log('FOUND USER=', foundUser);
+        if (foundUser && foundUser?.email === 'admin@dulceskari.com') {
+		    history("/postProduct");
+            return;
+        }
+        
+        console.log('TIENDA');
+        if (foundUser) {
+		    history("/tienda");
+            return;
+        }
      };
 
      const validateIsLogged = () => {
@@ -44,8 +58,7 @@ const Login = () => {
         validateIsLogged()
      }, [])
 
-    
-
+     
     return(
         <div className="container">
             <div className='text-center pt-5'>

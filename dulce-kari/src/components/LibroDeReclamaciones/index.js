@@ -112,11 +112,11 @@ const LibroDeReclamaciones =() => {
                 <div>
                     <h5>Detalle de su reclamo:</h5>
                 </div>
-                <div className="form-group align-item-center px-5 mx-5">
+                <div className="row form-group d-flex justify-content-center px-5 mx-5">
                     <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    <label for="exampleFormControlTextarea1">Máximo permitido 1000 caracteres</label>
+                    <small className="d-flex justify-content-center" for="exampleFormControlTextarea1">Máximo permitido 1000 caracteres</small>
                 </div>
-                <div>
+                <div className='d-flex justify-content-center pb-5 pt-5'>
                     <button type="submit" className="btn btn-primary center">Enviar</button>
                 </div>
             </form>

@@ -95,3 +95,19 @@ export const destroy = async (id) => {
     console.log(error);
   }
 };
+
+
+export const verifyUserExist = async (user) => {
+  try {
+    const response = await fetch(urlUsers,{
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
