@@ -11,7 +11,7 @@ function Contactanos () {
       <Mailer></Mailer>
       <div className="Container mb-0">
         <div className="d-flex justify-content-center">
-            <h1> ENCUENTRANOS</h1>
+            <h1> Encuentranos</h1>
         </div>
         <div className="d-flex justify-content-evenly">
         

@@ -16,7 +16,7 @@ export const CupCake = () => {
 
    const getData = async ()=> {
     const data = await GetProduct()
-    const resul = data.filter((product, index) => product.categoria === "CupCake")
+    const resul = data.filter((product, index) => product.categoria === "Cupcakes")
   
     setProductos(resul)
    }
@@ -24,7 +24,7 @@ export const CupCake = () => {
     return (
         <>
           <Paper>
-                <Typography variant='h4' textAlign="center">
+                <Typography variant='h4' textAlign="center" sx={{color: "#545454"}}>
                 Categoria CupCakes
                 </Typography>
             </Paper>

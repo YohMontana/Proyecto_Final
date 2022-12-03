@@ -15,7 +15,7 @@ import { MainLayout } from "../layouts";
 import { Bocaditos } from "../components/Store/Bocaditos";
 import { CupCake } from "../components/Store/Cupcake";
 import { Tortas } from "../components/Store/Tortas";
-
+import { Arreglo } from "../components/Store/Arreglo";
 
 
 
@@ -30,6 +30,7 @@ const Router = () => {
             <Route path="bocaditos" element={<Bocaditos/>}/>
             <Route path="cupcake" element={<CupCake/>}/>
             <Route path="tortas" element={<Tortas/>}/>
+            <Route path="arreglo" element={<Arreglo/>}/>
             
 
           </Route>

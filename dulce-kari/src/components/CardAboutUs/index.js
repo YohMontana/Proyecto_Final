@@ -11,6 +11,9 @@ function CardAboutUs() {
       <div className="first row container-fluid contain" >
         <div className="img-container col-sm-12  col-md-4 col-lg-6 "> <img className="foto" src={fotoKari} alt="" /> </div>
         <div className="text-container  col-sm-12  col-md-8  col-lg-6 ">
+        <div className="d-flex justify-content-center">
+            <h1>¿Porqué elegirnos?</h1>
+        </div>
         <p className="text-center mt-5">Dulces Kari es un lugar donde la imaginación, los sabores y la inspiración se fusionan para crear las tortas más espectaculares.
         Preparamos nuestros postres con mucho amor, dedicación y cuidado, para que los disfrutes con toda familia.
         Somos una empresa peruana que convierte momentos familiares en únicos y especiales, elaborando postres con ingredientes naturales y frescos, basados en recetas mejoradas al estilo casero y preparadas con mucho amor y dedicación
