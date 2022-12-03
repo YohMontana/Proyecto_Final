@@ -6,7 +6,7 @@ function App() {
   return (
     <ProductProvider>
       <Router />
-      </ProductProvider>
+    </ProductProvider>
   );
 }
 
