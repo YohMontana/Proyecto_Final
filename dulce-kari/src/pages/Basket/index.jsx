@@ -17,18 +17,8 @@ const Basket = () => {
         cartProducts.length > 0 &&
         cartProducts.map((product) => parseInt(product.precio)).reduce((prev, curr) => prev + curr);
 
-
-
-        
-    // cartProducts.length > 0 &&
-    // cartProducts
-      // .map((product) =>
-        // product.saleInfo.saleability === "NOT_FOR_SALE"
-          // ? 0
-          // : product.saleInfo.listPrice.amount
-      // )
-      // .reduce((prev, curr) => prev + curr);
-
+                 
+                
   return (
     <Container>
       <Typography variant="h4">
