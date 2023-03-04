@@ -10,3 +10,4 @@ export { default as RegistroView} from './Registro';
 export { default as ContactanosView} from './Contactanos';
 export { default as AddNewProduct} from './AddNewProduct';
 export { default as BasketView} from './Basket';
+export { default as ProfileView} from './Profile'

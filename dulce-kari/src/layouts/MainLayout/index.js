@@ -1,8 +1,10 @@
 import { useState, useContext } from "react";
 import { useEffect } from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate, Outlet, Navigate } from "react-router-dom";
 import logo from "../../asset/img/logo.jpg";
 import AddShoppingCartRoundedIcon from "@mui/icons-material/AddShoppingCartRounded";
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import { Link } from "react-router-dom";
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
@@ -22,8 +24,10 @@ import MenuItem from "@mui/material/MenuItem";
 import "./styles.css";
 
 const MainLayout = () => {
-  const history = useNavigate();
+  const { isAuth, user, logout } = useContext(AuthContext);
 
+  const history = useNavigate();
+  
   const { cartProducts } = useContext(ProductContext);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -43,6 +47,8 @@ const MainLayout = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  
+  if (!isAuth) return <Navigate to="/"/>;
 
   return (
     <>
@@ -283,6 +289,7 @@ const MainLayout = () => {
                   <Typography textAlign="center">Registrarse</Typography>
                 </MenuItem>
               </Menu>
+
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -323,6 +330,13 @@ const MainLayout = () => {
                   <a href="/registro">Registrarse</a>
                 </button>
               </MenuItem>
+                
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography className="menuComprimido" textAlign="center">
+                  Jhancarlo Esteban {user.name}                                 
+                </Typography>
+              </MenuItem>
+                                               
 
               <IconButton
                 size="large"
@@ -336,9 +350,25 @@ const MainLayout = () => {
                 <Link to="/carrito">
                   <AddShoppingCartRoundedIcon />
                 </Link>
-                </Badge>                
-                
+                </Badge>       
               </IconButton>
+              
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                color="inherit"
+                onClick={logout}
+              >
+                <Link to="/">
+                <LogoutRoundedIcon />
+                </Link>
+                
+                
+              </IconButton>    
+
+
             </Box>
           </Toolbar>
         </Container>

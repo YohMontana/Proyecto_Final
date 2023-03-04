@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { UserModel } from "../../models/UserModel";
-import {postUser} from "../../services"
+import { post } from "../../services"
 import {
 	Container,
 	CssBaseline,
@@ -14,22 +14,51 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Swal from "sweetalert2";
 
 
-function Registro() {
-	const history = useNavigate();
+const Register = () => {
+  const [values, setValues] = useState({
+    nombre: "",
+		apellido: "",
+		correo: "",
+		password: "",
+		tipoUsuario: "", 		
+  });
 
-	const handleSubmit = async (event) => {
-		event.preventDefault();
-		const data = new FormData(event.currentTarget);
-		const newUser = new UserModel(
-			data.get("name"),
-			data.get("email"),
-			data.get("password")
-		);
-		await postUser(newUser);
-		history("/login");
-	};
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+		
+		setValues({
+      ...values,
+      [name]: value,
+    });		
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+		const data = await post("registro", values);
+		console.log(data);
+    if (data.ok) {
+      Swal.fire({
+        icon: "success",
+        text: data.message,
+      });
+      setValues({
+        nombre: "",
+				apellido: "",
+				correo: "",
+				password: "",
+				tipoUsuario: "",        
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        text: data.message,
+      });
+    }
+  };
+	
 	return (
 		<Container component="main" maxWidth="xs">
             <div className='text-center pt-5'>
@@ -54,40 +83,66 @@ function Registro() {
 					component="form"
 					noValidate
 					onSubmit={handleSubmit}
+					method="post"
 					sx={{ mt: 3 }}
 				>
 					<Grid container spacing={2}>
 						<Grid item xs={12} >
 							<TextField
 								autoComplete="given-name"
-								name="name"
-								required
+								name="nombre"
+								value={values.nombre}
+								onChange={handleInputChange}
+								label="Nombre"								
 								fullWidth
-								id="name"
-								label="name"
-								autoFocus
+								required	
+								autoFocus					
 							/>
 						</Grid>
 						
-						<Grid item xs={12}>
+						<Grid item xs={12} >
 							<TextField
-								required
-								fullWidth
-								id="email"
-								label="Email Address"
-								name="email"
-								autoComplete="email"
+								name="apellido"
+								value={values.apellido}
+								onChange={handleInputChange}
+								label="Apellido"
+								fullWidth								
+								required								
 							/>
 						</Grid>
+
 						<Grid item xs={12}>
 							<TextField
-								required
+								name="correo"
+								value={values.correo}
+								onChange={handleInputChange}
+								label="Email Address"
 								fullWidth
+								required							
+							/>
+						</Grid>
+
+						<Grid item xs={12}>
+							<TextField
 								name="password"
-								label="Password"
+								value={values.password}
+								onChange={handleInputChange}
 								type="password"
-								id="password"
-								autoComplete="new-password"
+								label="Password"
+								fullWidth
+								required									
+							/>
+						</Grid>
+
+						<Grid item xs={12}>
+							<TextField
+								name="tipoUsuario"
+								value={values.tipoUsuario}
+								onChange={handleInputChange}
+								type="tipoUsuario"
+								label="Tipo Usuario"
+								fullWidth
+								required																
 							/>
 						</Grid>
 					</Grid>
@@ -110,6 +165,6 @@ function Registro() {
 			</Box>
 		</Container>
 	);
-}
+};
 
-export default Registro;
+export default Register;

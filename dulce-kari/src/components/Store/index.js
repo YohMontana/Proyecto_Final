@@ -12,7 +12,7 @@ import { GetProduct } from "../../services"
 const Store = () => {
 
 
-    const [produtos, setProductos] = useState([]);
+    const [productos, setProductos] = useState([]);
 
     useEffect(() => {
         getData();
@@ -51,6 +51,7 @@ const Store = () => {
                     </ul>
 
                 </div>
+                
                 <div className='container'>
                 <Outlet />
                     <Paper  >
@@ -60,7 +61,7 @@ const Store = () => {
                      
                     </Paper>
                     <Divider sx={{ margin: 3 }} />
-                    <GridProducts products={produtos} />
+                    <GridProducts products={productos} />
                    
                 </div>
 

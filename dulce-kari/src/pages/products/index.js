@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { PostProduct } from "../../services";
+import { post } from "../../services";
 import regalo1 from "../../asset/gif/regalo1.jpg";
 
 
 function Products() {
   const [product, setProduct] = useState({
-    name: "",
+    nombre: "",
     precio: "",
     descripcion: "",
     imagen: "",
-    categoria: "",
-    stock: "",
+    disponibilidad: "",    
   });
 
   
@@ -26,7 +26,7 @@ function Products() {
   const createProduct = async (e) => {
     e.preventDefault();
     try {
-      const response = await PostProduct("products", product);
+      const response = await post("products", product);
       if (response){
           setProduct({
             name: "",

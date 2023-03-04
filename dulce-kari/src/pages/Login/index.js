@@ -1,63 +1,44 @@
-import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState, useContext } from "react"
+import { signIn } from "../../services";
+import { useNavigate, Navigate, Link } from "react-router-dom"
+import { post } from "../../services";
+import { TextField, Button } from "@mui/material";
 import Swal from "sweetalert2"
 import {verifyUserExist} from "../../services";
+import { AuthContext } from "../../context/AuthContext";
 
 
 const Login = () => {
-    const [user, setUser] = useState({
-        email: "",
-        password: "",
-    });
-
-    const history = useNavigate()
-
-    const handleInputChange = (e) => {
-        setUser({
-            ...user,
-            [e.target.name]: e.target.value,
+        const { authLogin, isAuth } = useContext(AuthContext);
+      
+        const [values, setValues] = useState({
+          correo: "",
+          password: "",
         });
-    };
-
-    const handleLogin = async () => {
-        if (!user.email || !user.password) {
+      
+        const handleInputChange = (e) => {
+          const { name, value } = e.target;
+          setValues({
+            ...values,
+            [name]: value,
+          });
+        };
+      
+        if (isAuth()) return <Navigate to="/" />;
+      
+        const handleSubmit = async (e) => {
+          e.preventDefault();
+          const data = await post("login", values);
+      
+          if (data.ok) {
+            authLogin(data.data); // Le envio al usuario authenticado al AuthContext.
+          } else {
             Swal.fire({
-                title: "Error",
-                text: "Completa el correo y password",
-                icon: "error",
-
+              icon: "error",
+              text: data.message,
             });
-            return;
-        } 
-        localStorage.setItem("user", JSON.stringify(user));
-        validateIsLogged();
-
-        const data = await verifyUserExist();
-        console.log('DATA=', data);
-        const foundUser = data.find((element) => (user.email === element.email) && (user.password === element.pass) );
-        console.log('FOUND USER=', foundUser);
-        if (foundUser && foundUser?.email === 'admin@dulceskari.com') {
-		    history("/postProduct");
-            return;
-        }
-        
-        console.log('TIENDA');
-        if (foundUser) {
-		    history("/tienda");
-            return;
-        }
-     };
-
-     const validateIsLogged = () => {
-        const user = JSON.parse(localStorage.getItem("user"));
-        console.log(user);
-        if(user) history("/tienda");
-     };
-
-     useEffect(() => {
-        validateIsLogged()
-     }, [])
-
+          }
+        };
      
     return(
         <div className="container">
@@ -83,8 +64,8 @@ const Login = () => {
                         type="text"
                         className="form-control mt-4"
                         placeholder="Ingrese su email"
-                        name="email"
-                        value={user.email}
+                        name="correo"
+                        value={values.correo}
                         onChange={handleInputChange}
                         />
 
@@ -93,13 +74,13 @@ const Login = () => {
                         className="form-control mt-4"
                         placeholder="Ingrese su password"
                         name="password"
-                        value={user.password}
+                        value={values.password}
                         onChange={handleInputChange}
                         />
 
                         <div className="d-grid">
                             <button className="btn btn-outline-primary mt-4"
-                            onClick={handleLogin}
+                            onClick={handleSubmit}
                             >Ingresar</button>
                            
                         </div>

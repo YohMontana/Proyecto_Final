@@ -8,7 +8,7 @@ import {GetProduct} from "../../../services"
 
 export const CupCake = () => {
 
-    const [produtos, setProductos] = useState([]);
+    const [productos, setProductos] = useState([]);
 
     useEffect(()=>{
         getData();
@@ -29,7 +29,7 @@ export const CupCake = () => {
                 </Typography>
             </Paper>
             <Divider sx={{margin: 3}} />
-            <GridProducts products={produtos}/>
+            <GridProducts products={productos}/>
 
         </>
           
