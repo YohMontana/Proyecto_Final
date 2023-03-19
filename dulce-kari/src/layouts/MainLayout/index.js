@@ -6,6 +6,7 @@ import logo from "../../asset/img/logo.jpg";
 import AddShoppingCartRoundedIcon from "@mui/icons-material/AddShoppingCartRounded";
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import { Link } from "react-router-dom";
+import { isAuth, signOut } from "../../services";
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -20,11 +21,11 @@ import Avatar from "@mui/material/Avatar";
 import Badge from "@mui/material/Badge";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-
 import "./styles.css";
 
+
 const MainLayout = () => {
-  const { isAuth, user, logout } = useContext(AuthContext);
+  const isAuthenticated = isAuth();
 
   const history = useNavigate();
   
@@ -48,7 +49,7 @@ const MainLayout = () => {
     setAnchorElUser(null);
   };
   
-  if (!isAuth) return <Navigate to="/"/>;
+    // if (!isAuthenticated) return <history to="/"/>;
 
   return (
     <>
@@ -333,7 +334,7 @@ const MainLayout = () => {
                 
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography className="menuComprimido" textAlign="center">
-                  Jhancarlo Esteban {user.name}                                 
+                  Jhancarlo Esteban                                
                 </Typography>
               </MenuItem>
                                                
@@ -359,7 +360,7 @@ const MainLayout = () => {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="inherit"
-                onClick={logout}
+                onClick={signOut}
               >
                 <Link to="/">
                 <LogoutRoundedIcon />

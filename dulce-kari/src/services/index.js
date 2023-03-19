@@ -30,9 +30,8 @@ export const post = async (url, body) => {
   }
 };
 
-
 export const signIn = async (user) => {
-  const response = await fetch(`${API_URL}/auth/signin`, {
+  const response = await fetch(`${BASE_URL}/login/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -42,8 +41,9 @@ export const signIn = async (user) => {
   const data = await response.json();
   const status = response.status;
   return { data, status };
-  console.log(data);
 };
+
+
 
 export const isAuth = () => {
   const token = localStorage.getItem("token");
@@ -56,6 +56,11 @@ export const isAuth = () => {
     return true;
   }
   return false;
+};
+
+export const signOut = () => {
+  window.localStorage.removeItem("token");
+  return (window.location.href = "/");
 };
 
 

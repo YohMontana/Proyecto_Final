@@ -6,7 +6,8 @@ import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 
 
-const url="https://637c68be16c1b892ebb2aea6.mockapi.io/products/";
+// const url="https://637c68be16c1b892ebb2aea6.mockapi.io/products/";
+const url="http://127.0.0.1:8000/api/producto/";
 
 class AddNewProduct extends Component {
 state={
@@ -14,19 +15,21 @@ state={
   modalInsertar: false,
   modalEliminar: false,
   form:{
-    id: "",
-      name: "",
+      id: "",
+      nombre: "",
       precio: "",
       descripcion: "",
       imagen: "",
       categoria: "",
-      stock: "",
-  }
-}
+      disponibilidad  : "",
+
+  }}
 
 peticionGet=()=>{
 axios.get(url).then(response=>{
-  this.setState({data: response.data});
+  // this.setState({events: response.data});
+  this.setState({ ...this.state, data: response.data.content})
+  console.log(this.state)
 }).catch(error=>{
   console.log(error.message);
 })
@@ -65,18 +68,20 @@ seleccionarEmpresa=(dato)=>{
     tipoModal: 'actualizar',
     form: {
         id: dato.id,
-        name: dato.name,
+        nombre: dato.nombre,
         precio: dato.precio,
         descripcion: dato.descripcion,
         imagen: dato.imagen,
+        disponibilidad: dato.disponibilidad,
         categoria: dato.categoria,
-        stock: dato.stock,
+        
     }
   })
 }
 
 handleChange=async e=>{
 e.persist();
+
 await this.setState({
   form:{
     ...this.state.form,
@@ -102,12 +107,12 @@ console.log(this.state.form);
       <thead>
         <tr>
         <th>ID</th>
-                <th>name</th>
+                <th>nombre</th>
                 <th>precio</th>
                 <th>descripcion</th>
                 <th>imagen</th>
                 <th>categoria</th>
-                <th>stock</th>
+                <th>disponibilidad</th>
         </tr>
       </thead>
       <tbody>
@@ -115,12 +120,12 @@ console.log(this.state.form);
           return(
             <tr>
       <td>{dato.id}</td>
-                  <td>{dato.name}</td>
+                  <td>{dato.nombre}</td>
                   <td>{dato.precio}</td>
                   <td>{dato.descripcion}</td>
                   <td>{dato.imagen}</td>
                   <td>{dato.categoria}</td>
-                  <td>{dato.stock}</td>
+                  <td>{dato.disponibilidad}</td>
           <td>
                 <button className="btn btn-primary" onClick={()=>{this.seleccionarEmpresa(dato); this.modalInsertar()}}><FontAwesomeIcon icon={faEdit}/></button>
                 {"   "}
@@ -142,7 +147,7 @@ console.log(this.state.form);
                   <div className="form-group">
                     <input className="form-control" type="text" name="id" id="id" readOnly onChange={this.handleChange} value={form?form.id: ''}/>
                     <br />
-                    <input className="form-control" type="text" name="name" placeholder="name" id="name" onChange={this.handleChange} value={form?form.name: ''}/>
+                    <input className="form-control" type="text" name="nombre" placeholder="nombre" id="nombre" onChange={this.handleChange} value={form?form.nombre: ''}/>
                     <br />
                     <input className="form-control" type="number" name="precio" placeholder="precio" id="precio" onChange={this.handleChange} value={form?form.precio: ''}/>
                     <br />
@@ -152,7 +157,7 @@ console.log(this.state.form);
                     <br />
                     <input className="form-control" type="text" name="categoria" placeholder="categoria" id="categoria" onChange={this.handleChange} value={form?form.categoria:''}/>
                     <br />
-                    <input className="form-control" type="text" name="stock" placeholder="stock" id="stock" onChange={this.handleChange} value={form?form.stock:''}/>
+                    <input className="form-control" type="text" name="disponibilidad" placeholder="disponibilidad" id="disponibilidad" onChange={this.handleChange} value={form?form.stock:''}/>
                   </div>
                 </ModalBody>
 
@@ -171,7 +176,7 @@ console.log(this.state.form);
 
           <Modal isOpen={this.state.modalEliminar}>
             <ModalBody>
-               Estás seguro que deseas eliminar a la dato {form && form.name}
+               Estás seguro que deseas eliminar a la dato {form && form.nombre}
             </ModalBody>
             <ModalFooter>
               <button className="btn btn-danger" onClick={()=>this.peticionDelete()}>Sí</button>

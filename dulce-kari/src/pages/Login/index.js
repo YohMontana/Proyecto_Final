@@ -1,44 +1,66 @@
-import { useState, useContext } from "react"
+import { useState, useContext } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { signIn } from "../../services";
-import { useNavigate, Navigate, Link } from "react-router-dom"
-import { post } from "../../services";
 import { TextField, Button } from "@mui/material";
-import Swal from "sweetalert2"
+import Swal from "sweetalert2";
 import {verifyUserExist} from "../../services";
 import { AuthContext } from "../../context/AuthContext";
 
 
 const Login = () => {
-        const { authLogin, isAuth } = useContext(AuthContext);
+        const { authentication, setAuthentication } = useContext(AuthContext);
       
-        const [values, setValues] = useState({
-          correo: "",
-          password: "",
-        });
+        const [userCredentials, setUserCredentials] = useState({
+            correo: "",
+            password: "",
+          });
       
+        const navigate = useNavigate();
+
         const handleInputChange = (e) => {
           const { name, value } = e.target;
-          setValues({
-            ...values,
+          
+          setUserCredentials({
+            ...userCredentials,
             [name]: value,
           });
         };
-      
-        if (isAuth()) return <Navigate to="/" />;
-      
+                 
         const handleSubmit = async (e) => {
-          e.preventDefault();
-          const data = await post("login", values);
+            e.preventDefault();
+            const response = await signIn(userCredentials);
+            if (response.status === 200) {
+              localStorage.setItem("token", response.data.access);
+              setAuthentication({
+                ...authentication,
+                isAuthenticated: true,
+                successMessage: "Usuario logeado exitosamente",
+              });
+              navigate("/");
+            } else {
+              setAuthentication({
+                ...authentication,
+                isAuthenticated: false,
+                isError: true,
+                errorMessage: "Credenciales incorrectas",
+              });
+            }
+          };
+        
+        
+        // const handleSubmit = async (e) => {
+          // e.preventDefault();
+          // const data = await post("login", values);
       
-          if (data.ok) {
-            authLogin(data.data); // Le envio al usuario authenticado al AuthContext.
-          } else {
-            Swal.fire({
-              icon: "error",
-              text: data.message,
-            });
-          }
-        };
+          // if (data.ok) {
+            // authLogin(data.data); // Le envio al usuario authenticado al AuthContext.
+          // } else {
+            // Swal.fire({
+              // icon: "error",
+              // text: data.message,
+            // });
+          // }
+        // };
      
     return(
         <div className="container">
@@ -65,7 +87,7 @@ const Login = () => {
                         className="form-control mt-4"
                         placeholder="Ingrese su email"
                         name="correo"
-                        value={values.correo}
+                        value={userCredentials.correo}
                         onChange={handleInputChange}
                         />
 
@@ -74,7 +96,7 @@ const Login = () => {
                         className="form-control mt-4"
                         placeholder="Ingrese su password"
                         name="password"
-                        value={values.password}
+                        value={userCredentials.password}
                         onChange={handleInputChange}
                         />
 
